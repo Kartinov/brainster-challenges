@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+h1,
+h2,
+h3,
+p,
+ul { margin-top: 0; }
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

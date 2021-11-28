@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+section.newsletter {
+  @extend %section;
+  background-color: var.$background-color-primary;
+  .inner {
+    @extend %wrap;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    @include mix.tablet-styles {
+      flex-wrap: wrap;
+    }
+    #email {
+      width: 500px;
+      margin-right: var.$gutter-base;
+      padding: math.div(var.$gutter-base, 2);
+      &:focus {
+        outline: none;
+      }
+      @include mix.tablet-styles {
+        margin-right: 0;
+        margin-bottom: math.div(var.$gutter-base, 2);
+      }
+      @include mix.mobile-l-styles {
+        width: 100%;
+      }
+    }
+  }
+}

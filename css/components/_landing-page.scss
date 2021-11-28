@@ -1,0 +1,65 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+.landing-page {
+  min-height: 100vh;
+  background-color: var.$background-color-primary;
+  background-image: linear-gradient(
+      rgba(65, 74, 79, 0.7),
+      rgba(65, 74, 79, 0.7)
+    ),
+    url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text-block {
+    color: var.$text-color-primary;
+    p {
+      font-size: var.$font-size-big;
+    }
+  }
+}
+
+nav {
+  @extend %wrap;
+  padding-top: math.div(var.$gutter-base, 1.5);
+  padding-bottom: math.div(var.$gutter-base, 1.5);
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @include mix.mobile-l-styles {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  a {
+    color: var.$text-color-primary;
+  }
+  .logo {
+    font-family: var.$font-family-secondary;
+    font-size: var.$heading-size-small;
+    font-weight: var.$font-weight-bold;
+    color: transparentize(var.$text-color-primary, 0.2);
+    @include mix.mobile-l-styles {
+      margin-bottom: math.div(var.$gutter-base, 2);
+    }
+  }
+  ul.navigation {
+    align-items: center;
+    @include mix.mobile-l-styles {
+      justify-content: space-between;
+      width: 100%;
+      padding-right: math.div(var.$gutter-base, 2);
+      padding-left: math.div(var.$gutter-base, 2);
+    }
+  }
+}

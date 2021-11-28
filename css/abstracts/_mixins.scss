@@ -1,0 +1,41 @@
+@use "./variables" as var;
+@use "sass:math";
+
+// Responsive MQ
+
+@mixin mobile-l-styles {
+  @media (max-width: 425px) {
+      @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+      @content;
+  }
+}
+
+@mixin laptop-m-styles {
+  @media (max-width: 1024px) {
+      @content;
+  }
+}
+
+@mixin laptop-l-styles {
+  @media (max-width: 1440px) {
+      @content;
+  }
+}
+
+// Extends
+
+%section {
+  padding-top: (var.$gutter-base * 3);
+  padding-bottom: (var.$gutter-base * 3);
+}
+
+
+%wrap {
+  padding-left: (var.$gutter-base * 2);
+  padding-right: (var.$gutter-base * 2);
+}

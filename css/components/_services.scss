@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+section.services {
+  @extend %section;
+  background-color: var.$background-color-primary;
+  .inner {
+    @extend %wrap;
+  }
+}
+
+.features-items {
+  display: flex;
+  text-align: center;
+  @include mix.tablet-styles {
+    flex-direction: column;
+    align-items: center;
+  }
+  & > *:last-child{
+    margin-bottom: 0;
+  }
+  .item {
+    padding-left: var.$gutter-base;
+    padding-right: var.$gutter-base;
+    width: 33.333%;
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+    @include mix.tablet-styles {
+      width: 60%;
+      &:not(:first-child) {
+        margin-top: var.$gutter-base * 3;
+      }
+    }
+    @include mix.mobile-l-styles {
+      width: 100%;
+    }
+  }
+  .icon {
+    margin-bottom: math.div(var.$gutter-base, 1.5);
+    color: var.$background-feature-color;
+    font-size: var.$heading-size-big;
+  }
+}

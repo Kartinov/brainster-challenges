@@ -1,0 +1,77 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+body {
+  font-family: var.$font-family-base;
+  color: var.$text-color-base;
+}
+
+h1 {
+  font-size: var.$heading-size-big;
+  margin-bottom: math.div(var.$gutter-base, 2);
+}
+
+h2 {
+  font-size: var.$heading-size-medium;
+  font-weight: var.$font-weight-medium;
+}
+
+h1,
+h2,
+h3,
+p::first-letter {
+  text-transform: capitalize;
+}
+
+p {
+  line-height: var.$line-height-base;
+  margin-bottom: math.div(var.$gutter-base, 1.5);
+}
+
+ul {
+  display: flex;
+  li {
+    list-style-type: none;
+    &:not(:last-child) {
+      margin-right: math.div(var.$gutter-base, 2);
+    }
+  }
+}
+
+header.text-block {
+  text-align: center;
+  padding-left: math.div(var.$gutter-base, 2);
+  padding-right: math.div(var.$gutter-base, 2);
+  line-height: var.$line-height-normal;
+  .line {
+    width: 150px;
+    height: math.div(var.$border-radius, 2.5);
+    background-color: var.$background-feature-color;
+    margin-top: var.$gutter-base;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+header.sub-heading {
+  margin-bottom: (var.$gutter-base * 2.5);
+  @include mix.laptop-m-styles {
+    br {
+      display: none;
+    }
+  }
+}
+
+.btn {
+  color: var.$text-color-primary;
+  background-color: var.$background-feature-color;
+  font-weight: var.$font-weight-medium;
+  font-size: var.$font-size-base;
+  text-transform: uppercase;
+  padding: (math.div(var.$gutter-base, 2)) (var.$gutter-base * 1.5);
+  border-radius: var.$border-radius;
+  border: none;
+  cursor: pointer;
+}
