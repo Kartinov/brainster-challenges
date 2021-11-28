@@ -1,7 +1,12 @@
-# Brainster Challenges
-Every challenge it's a separate branch
+# Challenge 05 - Flex & Git
 - **Student:** Dimche Kartinov
 - **FullStack:** Group 6
 
-## Challenges
-- [x] Challenge 05 - Flex & Git
+## Built With
+- HTML
+- SASS
+
+## Getting Started
+To view this project you should compile **main.scss** file into **main.css** by following this simple instructions:
+- Go to **/css** directory
+- sass main.scss main.css
