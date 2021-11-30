@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:math';
+
+html {
+    font-size: 20px;
+    @include mix.laptop-l-styles {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: var.$font-family-base;
+    font-weight: var.$font-weight-normal;
+    line-height: var.$line-height-base;
+    color: var.$text-color-primary;
+    padding-left: 25%;
+    @include mix.tablet-styles {
+        padding-left: 0;
+        padding-top: 83px;
+    }
+}
+
+a {
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: capitalize;
+}

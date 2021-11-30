@@ -1,0 +1,28 @@
+@use "./variables" as var;
+@use "sass:math";
+
+@mixin laptop-l-styles {
+  @media (max-width: 1440px) {
+      @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-l-styles {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+%section {
+  padding: (var.$gutter-base * 2.5) (var.$gutter-base * 1.7);
+
+  @include tablet-styles {
+    padding: (math.div(var.$gutter-base, 1.5));
+  }
+}
