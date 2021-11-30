@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    width: 80%;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header .logo {
+    width: 35px;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+nav > ul li a {
+    font-size: 0.9rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease-out, border-bottom 0.3s ease-out;
+}
+
+nav > ul li a:hover {
+    color: #ccc;
+    border-bottom: 2px solid #ff6161;
+}
+
+nav > ul li:not(:last-child) {
+    margin-right: 15px;
+}
+
+.apple-devices-image {
+    margin: 0 auto;
+    width: 500px;
+}
+
+.nav-box {
+    width: 25%;
+    float: left;
+    padding: 10px 0;
+}
+
+.nav-box > i {
+    font-size: 3.4rem;
+    margin-bottom: 14px;
+}
+
+.box {
+    width: 50%;
+}
+
+.box > .device-img {
+    width: 220px;
+    margin: 0 auto;
+}
+
+.box p {
+    font-size: 1.1rem;
+    text-indent: 20px;
+}
+
+.work {
+    width: 33.333%;
+}
+
+.social-icons {
+    padding: 80px 0;
+}
+
+.social-icons > ul li:not(:last-child) {
+    margin-right: 150px;
+}
+
+.social-icons > ul li {
+    font-size: 2rem;
+}
+
+.social-icons i {
+    line-height: normal;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+/* General */
+
+li,
+.logo {
+    display: inline-block;
+}
+
+li > a {
+    text-decoration: none;
+}
+
+.nav-box,
+.info > h3,
+.work,
+.social-icons,
+footer {
+    text-align: center;
+}
+
+.info {
+    float: left;
+    padding: 20px 20px 6px;
+}
+
+.info > h3 {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+h3:not(.work h3),
+p,
+small,
+li > a {
+    color: #fff;
+}
+
+.info p {
+    padding-bottom: 16px;
+}
+
+.word-s-4 {
+    word-spacing: 4px;
+}
+
+.apple-devices-image h1,
+footer p {
+    margin-bottom: 0;
+}
+
+.clear::after {
+    content: '';
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+/* Colors */
+
+.bg-dark-purple {
+    background-color: #514354;
+}
+
+.bg-soft-orange {
+    background-color: #f09e84;
+}
+
+.bg-grayish {
+    background-color: #bcb9aa;
+}
+
+.bg-blue {
+    background-color: #638caa;
+}
+
+.bg-soft-blue {
+    background-color: #b7ced6;
+}
+
+.bg-sky {
+    background-color: #9ce0d1;
+}
+
+.bg-light-grey {
+    background-color: #dbdbdb;
+}
+
+.bg-grey {
+    background-color: #bcb9aa;
+}
+
+.bg-purple {
+    background-color: #9aa7b8;
+}
