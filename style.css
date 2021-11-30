@@ -1,0 +1,425 @@
+/* General Styles */
+
+html {
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+li:not(:last-child) {
+    margin-right: 15px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav a,
+.layouts a {
+    color: #000;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.dir-column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+nav,
+footer {
+    justify-content: space-between;
+}
+
+.item {
+    width: 250px;
+}
+
+.fa-bars,
+.btn {
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+}
+
+.btn-primary {
+    padding: 15px 30px;
+    background-color: rgb(48, 47, 47);
+    align-self: center;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    padding: 5px 15px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:not(:last-child) {
+    margin-right: 10px;
+}
+
+.btn-secondary:hover:not(.selected) {
+    background-color: rgb(45, 45, 45);
+    color: #fff;
+}
+
+.selected {
+    box-shadow: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.container-golden {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.container-classic {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.container-side {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Text settings */
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+.fs-small {
+    font-size: 0.8rem;
+}
+
+.fs-large {
+    font-size: 2.8rem;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* END General */
+
+/* Header Styles */
+
+nav {
+    padding: 30px 60px 10px;
+}
+
+nav .fa-bars {
+    display: none;
+}
+
+.navigation .dropdown {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.navigation .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    animation: slideDown 0.3s ease-in-out forwards;
+    transform-origin: top center;
+}
+
+.navigation .dropdown-content a {
+    padding: 10px;
+}
+
+.navigation .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.banner {
+    justify-content: center;
+    height: calc(100vh - 79.2px);
+}
+
+/* Boxes Section */
+.boxes {
+    justify-content: center;
+}
+
+.boxes .box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+}
+
+.boxes .box:not(:last-child) {
+    margin-right: 30px;
+}
+
+.last-child-mb-0 > *:last-child,
+footer p {
+    margin-bottom: 0;
+}
+
+/* Website Layouts Section */
+
+.layouts {
+    justify-content: center;
+    margin-right: -30px;
+}
+
+.layouts .layout {
+    margin-right: 30px;
+    margin-top: 60px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s linear;
+}
+
+.layouts .layout-title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.layouts .layout:hover {
+    border: 1px solid black;
+}
+
+/* Company Skills Section */
+.line {
+    border-top: 2px solid rgb(206, 205, 205);
+    width: 60px;
+    margin-top: 22px;
+}
+
+.skills {
+    margin-top: 40px;
+    margin-right: -60px;
+}
+
+.skills .col {
+    margin-right: 60px;
+}
+
+.skills .col .skill:not(:first-child) {
+    margin-top: 30px;
+}
+
+.skill img {
+    width: 20px;
+    align-self: center;
+    margin-right: 10px;
+}
+
+/* Social Links Section */
+
+.social-links a {
+    color: inherit;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-out;
+}
+
+.social-links a:hover {
+    color: rgb(45, 45, 45);
+}
+
+/* Footer */
+footer {
+    padding: 30px 40px;
+}
+
+/* Colors */
+
+.clr-white {
+    color: #fff;
+}
+
+.clr-lightgrey {
+    color: rgb(246, 246, 246);
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+.bg-lightgrey {
+    background-color: rgb(246, 246, 246);
+}
+
+.bg-red {
+    background-color: rgb(255, 84, 68);
+}
+
+.bg-purple {
+    background-color: rgb(170, 45, 182);
+}
+
+.bg-cyan {
+    background-color: rgb(30, 194, 164);
+}
+
+.bg-blue {
+    background-color: rgb(39, 139, 224);
+}
+
+.bg-darkgrey {
+    background-color: #464646;
+}
+
+.box-shadow {
+    box-shadow: 0px 1px 5px 1px rgba(50, 50, 50, 0.3);
+}
+
+/* Keyframes */
+
+@keyframes slideDown {
+    0% {
+        transform: scaleY(0);
+    }
+    80% {
+        transform: scaleY(1.1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+/* Media Queries */
+
+@media (max-width: 425px) {
+    nav {
+        padding: 15px 30px;
+    }
+
+    nav .logo {
+        align-self: center;
+    }
+
+    nav .navigation {
+        display: none;
+    }
+
+    nav .fa-bars {
+        display: block;
+    }
+
+    .banner {
+        height: calc(100vh - 66px);
+        padding-right: 85px;
+        padding-left: 85px;
+    }
+
+    .boxes {
+        align-items: center;
+    }
+
+    .boxes .box:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .boxes,
+    .layouts .row {
+        flex-direction: column;
+    }
+
+    .line {
+        width: 20px;
+    }
+
+    .skills {
+        margin-right: -10px;
+    }
+
+    .skills .col:last-child {
+        display: none;
+    }
+
+    .skills .col {
+        flex: 0 1 50%;
+        margin-right: 10px;
+    }
+
+    .skill span {
+        line-height: 2.5;
+    }
+
+    .skill img {
+        align-self: flex-start;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    footer p {
+        font-size: 0.55rem;
+    }
+}
