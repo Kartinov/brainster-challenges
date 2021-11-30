@@ -1,4 +1,4 @@
-# Challenge 03 - CSS Flex & @media
+# Challenge 02 - CSS Intro
 - **Student:** Dimche Kartinov
 - **FullStack:** Group 6
 
