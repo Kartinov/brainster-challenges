@@ -1,8 +1,17 @@
+// Custom Colors
 $theme-colors: (
-  'magenta': rgb(73, 0, 213),
+  'magenta': rgb(73, 0, 213)
 );
 
-@import '../bootstrap/scss/bootstrap.scss';
+  @import '../bootstrap/scss/bootstrap.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 56px;
+}
 
 #home-section {
   background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)),
@@ -14,6 +23,6 @@ $theme-colors: (
   min-height: 700px;
 
   .home-inner {
-    padding-top: 150px;
+    padding-top: 105px;
   }
 }
