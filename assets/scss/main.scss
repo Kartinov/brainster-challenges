@@ -1,1 +1,19 @@
-@import "../bootstrap/scss/bootstrap.scss";
+$theme-colors: (
+  'magenta': rgb(73, 0, 213),
+);
+
+@import '../bootstrap/scss/bootstrap.scss';
+
+#home-section {
+  background-image: linear-gradient(rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0.7)),
+    url('../../img/home.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 700px;
+
+  .home-inner {
+    padding-top: 170px;
+  }
+}
