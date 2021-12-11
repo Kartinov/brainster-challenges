@@ -283,9 +283,25 @@
     </div>
   </section>
 
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-4">
+          <h3 class="text-uppercase">blogger</h3>
+          <p>Copyright &copy; <span id="year"></span></p>
+          <button class="btn btn-primary text-capitalize">cotact us</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="./assets/bootstrap/js/jquery-3.6.0.min.js"></script>
   <script src="./assets/bootstrap/js/popper.min.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    // Current Year
+    $('#year').text(new Date().getFullYear());
+  </script>
 </body>
 
 </html>
