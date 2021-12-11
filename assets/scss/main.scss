@@ -1,9 +1,9 @@
 // Custom Colors
 $theme-colors: (
-  'magenta': rgb(73, 0, 213)
+  'magenta': rgb(73, 0, 213),
 );
 
-  @import '../bootstrap/scss/bootstrap.scss';
+@import '../bootstrap/scss/bootstrap.scss';
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +11,12 @@ html {
 
 body {
   padding-top: 56px;
+}
+
+.navbar {
+  button:focus {
+    border-color: #916c24;
+  }
 }
 
 #home-section {
