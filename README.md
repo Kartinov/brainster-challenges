@@ -4,6 +4,7 @@ Every challenge it's a separate branch
 - **FullStack:** Group 6
 
 ## Challenges
+- [ ] Challenge 08 - Bootstrap
 - [x] Challenge 07 - Bootstrap
 - [x] Challenge 06 - Push previous challenges to **GitLab**
 - [x] Challenge 05 - Flex & Git
