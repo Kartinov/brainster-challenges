@@ -1,0 +1,11 @@
+@mixin laptop-l-styles {
+  @media (max-width: 1440px) {
+      @content;
+  }
+}
+
+@mixin tablet-styles {
+  @media (max-width: 768px) {
+      @content;
+  }
+}

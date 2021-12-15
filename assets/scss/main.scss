@@ -1,1 +1,39 @@
-@import "../bootstrap/scss/bootstrap.scss";
+@import '../bootstrap/scss/bootstrap.scss';
+@import './absctracts/mixins';
+
+html {
+  font-size: 18px;
+  @include laptop-l-styles {
+    font-size: 16px;
+  }
+}
+
+.navbar {
+  hr.line {
+    border-top-width: 1px;
+    border-top-color: #000;
+    border-bottom-width: 1px;
+    border-bottom-color: #525252;
+    border-bottom-style: solid;
+  }
+  .navbar-brand {
+    color: #979797;
+  }
+  .nav-item.active {
+    border-left: #fff 3px solid;
+  }
+  .nav-link {
+    padding: 0.8rem 1rem !important;
+  }
+
+  @include tablet-styles {
+    padding-left: 0;
+    padding-right: 0;
+    a.navbar-brand {
+      margin-left: 1rem;
+    }
+    button.navbar-toggler {
+      margin-right: 1rem;
+    }
+  }
+}
