@@ -10039,8 +10039,11 @@ section#homepage-slider .carousel-control-next-icon {
 }
 
 section#home-head {
-  min-height: 200px;
-  background: url("../../img/lights.jpg") no-repeat top/cover;
+  min-height: 160px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/lights.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /*# sourceMappingURL=main.css.map */
