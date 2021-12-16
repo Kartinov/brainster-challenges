@@ -2,12 +2,19 @@
 @import './absctracts/mixins';
 
 html {
-  font-size: 18px;
-  @include laptop-l-styles {
-    font-size: 16px;
+  font-size: 16px;
+  @include xxl-breakpoint {
+    font-size: 18px;
+  }
+  body {
+    padding-top: 72px;
+    @include xxl-breakpoint {
+      padding-top: 81px;
+    }
   }
 }
 
+// NAVBAR STYLES
 .navbar {
   hr.line {
     border-top-width: 1px;
@@ -23,17 +30,65 @@ html {
     border-left: #fff 3px solid;
   }
   .nav-link {
-    padding: 0.8rem 1rem !important;
+    padding: 1rem 1rem !important;
   }
 
-  @include tablet-styles {
+  @include max-md-breakpoint {
     padding-left: 0;
     padding-right: 0;
     a.navbar-brand {
-      margin-left: 1rem;
+      margin-left: 2rem;
     }
     button.navbar-toggler {
-      margin-right: 1rem;
+      margin-right: 1.4rem;
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
     }
+  }
+}
+
+// HOMEPAGE SLIDER STYLES
+section#homepage-slider {
+  .carousel-item {
+    height: 750px;
+    .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
+  }
+  .bg-image {
+    background-size: cover;
+    background-position: top;
+  }
+
+  .bg-image-one {
+    background-image: url('../../img/image2.jpg');
+  }
+
+  .bg-image-two {
+    background-image: url('../../img/image1.jpg');
+  }
+  
+  .bg-image-three {
+    background-image: url('../../img/image3.jpg');
+  }
+
+  .carousel-indicators > li {
+    height: 6px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: #000;
+    border: 1px solid #fff;
+    &.active {
+      background-color: #fff;
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
   }
 }

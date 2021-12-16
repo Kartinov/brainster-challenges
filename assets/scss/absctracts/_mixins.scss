@@ -1,11 +1,44 @@
-@mixin laptop-l-styles {
-  @media (max-width: 1440px) {
-      @content;
+// Bootstrap Breakpoints
+// X-Small devices (portrait phones, less than 576px)
+
+// Small devices (landscape phones, 576px and up)
+@mixin sm-breakpoint {
+  @media (min-width: 576px) {
+    @content;
   }
 }
 
-@mixin tablet-styles {
-  @media (max-width: 768px) {
-      @content;
+// Medium devices (tablets, 768px and up)
+@mixin md-breakpoint {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin lg-breakpoint {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@mixin xl-breakpoint {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@mixin xxl-breakpoint {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// Custom breakpoints
+@mixin max-md-breakpoint {
+  @media (max-width: 991.98px) {
+    @content;
   }
 }
