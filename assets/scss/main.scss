@@ -21,6 +21,9 @@ html {
 
 // NAVBAR STYLES
 .navbar {
+  a.navbar-brand {
+    margin-left: 1.4rem;
+  }
   hr.line {
     border-top-width: 1px;
     border-top-color: #000;
@@ -41,9 +44,7 @@ html {
   @include max-md-breakpoint {
     padding-left: 0;
     padding-right: 0;
-    a.navbar-brand {
-      margin-left: 2rem;
-    }
+
     button.navbar-toggler {
       margin-right: 1.4rem;
       .navbar-toggler-icon {
@@ -77,7 +78,7 @@ section#homepage-slider {
   }
 
   .bg-image-three {
-    background-image:  url('../../img/image3.jpg');
+    background-image: url('../../img/image3.jpg');
     @include xxl-breakpoint {
       background-position: center;
     }
@@ -99,4 +100,10 @@ section#homepage-slider {
     width: 30px;
     height: 30px;
   }
+}
+
+// HOME HEAD SECTION
+section#home-head {
+  min-height: 200px;
+  background: url('../../img/lights.jpg') no-repeat top / cover;
 }

@@ -9964,6 +9964,9 @@ html body {
   margin-bottom: 0;
 }
 
+.navbar a.navbar-brand {
+  margin-left: 1.4rem;
+}
 .navbar hr.line {
   border-top-width: 1px;
   border-top-color: #000;
@@ -9984,9 +9987,6 @@ html body {
   .navbar {
     padding-left: 0;
     padding-right: 0;
-  }
-  .navbar a.navbar-brand {
-    margin-left: 2rem;
   }
   .navbar button.navbar-toggler {
     margin-right: 1.4rem;
@@ -10036,6 +10036,11 @@ section#homepage-slider .carousel-control-prev-icon,
 section#homepage-slider .carousel-control-next-icon {
   width: 30px;
   height: 30px;
+}
+
+section#home-head {
+  min-height: 200px;
+  background: url("../../img/lights.jpg") no-repeat top/cover;
 }
 
 /*# sourceMappingURL=main.css.map */
