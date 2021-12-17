@@ -1,3 +1,7 @@
+$theme-colors: (
+    "black":    #000
+  );
+
 @import '../bootstrap/scss/bootstrap.scss';
 @import './absctracts/mixins';
 
