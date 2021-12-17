@@ -9964,6 +9964,13 @@ html body {
   margin-bottom: 0;
 }
 
+.img-head-section {
+  min-height: 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .navbar a.navbar-brand {
   margin-left: 1.4rem;
 }
@@ -10039,11 +10046,15 @@ section#homepage-slider .carousel-control-next-icon {
 }
 
 section#home-head {
-  min-height: 160px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/lights.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+}
+
+section#video-head {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../img/media.jpg");
+}
+
+.modal-dialog {
+  max-width: 550px;
 }
 
 /*# sourceMappingURL=main.css.map */

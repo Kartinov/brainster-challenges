@@ -127,10 +127,10 @@
   </section>
 
   <!-- HOME HEAD SECTION -->
-  <section id="home-head" class="py-5">
-    <div class="row">
-      <div class="col text-center text-white ">
-        <div class="container mb-0-last-child">
+  <section id="home-head" class="img-head-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center text-white mb-0-last-child">
           <h1 class="h3">Are you ready to get started?</h1>
           <p>Sussex result matter any end see. It speedily me addition
             weddings vicinity in pleasure weddings vicinity in
@@ -159,9 +159,60 @@
     </div>
   </section>
 
+  <!-- VIDEO HEAD SECTION -->
+  <section id="video-head" class="img-head-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center text-white mb-0-last-child">
+          <a href="#" class="d-inline-block text-white video-btn"
+            data-video="https://www.youtube.com/embed/u-JKZnvsulg"
+            data-toggle="modal" data-target="#youtubeVideo">
+            <i class="fas fa-play fa-2x mb-2"></i>
+          </a>
+          <h1 class="h3">See what we do</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS -->
+  <div class="modal fade" id="youtubeVideo" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="400px" src="" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay;" allowfullscreen
+            allowscriptaccess="always"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="./assets/bootstrap/js/jquery-3.6.0.min.js"></script>
   <script src="./assets/bootstrap/js/popper.min.js"></script>
   <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    // Video Play
+    $(function () {
+      // Auto play modal video
+      $(".video-btn").click(function () {
+        var theModal = $(this).data("target"),
+          videoSRC = $(this).attr("data-video"),
+          videoSRCauto = videoSRC +
+            "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

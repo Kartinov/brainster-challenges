@@ -19,6 +19,13 @@ html {
   margin-bottom: 0;
 }
 
+.img-head-section {
+  min-height: 160px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 // NAVBAR STYLES
 .navbar {
   a.navbar-brand {
@@ -104,9 +111,15 @@ section#homepage-slider {
 
 // HOME HEAD SECTION
 section#home-head {
-  min-height: 160px;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../img/lights.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../img/lights.jpg');
+}
+
+// VIDEO HEAD SECTION
+section#video-head {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../../img/media.jpg');
+}
+.modal-dialog {
+  max-width: 550px;
 }
