@@ -10199,4 +10199,8 @@ header#header-block {
   height: 450px;
 }
 
+section#about-us .aboutus-img {
+  margin-top: -80px;
+}
+
 /*# sourceMappingURL=main.css.map */
