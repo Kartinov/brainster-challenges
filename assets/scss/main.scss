@@ -138,3 +138,11 @@ header#header-block {
 section#about-us .aboutus-img{
   margin-top: -80px;
 }
+
+// Testimonials
+section#testimonials {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}

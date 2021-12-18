@@ -10203,4 +10203,9 @@ section#about-us .aboutus-img {
   margin-top: -80px;
 }
 
+section#testimonials .carousel-control-prev,
+section#testimonials .carousel-control-next {
+  width: 10%;
+}
+
 /*# sourceMappingURL=main.css.map */
