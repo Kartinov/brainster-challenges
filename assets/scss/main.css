@@ -10345,4 +10345,11 @@ section#testimonials .carousel-control-next {
   width: 10%;
 }
 
+section#blog .blockquote {
+  font-size: 1rem;
+}
+section#blog .card-body {
+  padding: 0.8rem;
+}
+
 /*# sourceMappingURL=main.css.map */

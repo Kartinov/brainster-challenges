@@ -1,6 +1,6 @@
 $theme-colors: (
     "black":    #000,
-    "darken":     #212121
+    "darken":   #212121
   );
 
 @import '../bootstrap/scss/bootstrap.scss';
@@ -140,10 +140,21 @@ section#about-us .aboutus-img{
   margin-top: -80px;
 }
 
-// Testimonials
+// TESTIMONIALS
 section#testimonials {
   .carousel-control-prev,
   .carousel-control-next {
     width: 10%;
+  }
+}
+
+
+// BLOG SECTION
+section#blog {
+  .blockquote {
+    font-size: 1rem;
+  }
+  .card-body {
+    padding: 0.8rem;
   }
 }
