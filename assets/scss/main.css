@@ -10217,21 +10217,8 @@ h3 {
     border-color: #dee2e6;
   }
 }
-html {
-  font-size: 16px;
-}
-@media (min-width: 1400px) {
-  html {
-    font-size: 18px;
-  }
-}
-html body {
+body {
   padding-top: 72px;
-}
-@media (min-width: 1400px) {
-  html body {
-    padding-top: 81px;
-  }
 }
 
 .mb-0-last-child > *:last-child {
@@ -10350,6 +10337,23 @@ section#blog .blockquote {
 }
 section#blog .card-body {
   padding: 0.8rem;
+}
+
+section#staff hr {
+  border-top-width: 2px;
+}
+section#staff img {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  section#staff img {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  section#staff img {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
