@@ -1,18 +1,8 @@
-$theme-colors: (
-  'black': #000,
-  'darken': #212121,
-);
-
+@import './absctracts/customBootstrapVariables';
 @import '../bootstrap/scss/bootstrap.scss';
 
 @import './absctracts/variables';
 @import './absctracts/mixins';
 
-@import './core/common-elements';
-@import './core/custom-font';
-
-@import './page-style/homepage';
-@import './page-style/about';
-@import './page-style/services';
-@import './page-style/blog';
-@import './page-style/contact';
+@import './core/core';
+@import './pages/pages';

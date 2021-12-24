@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+section#blog {
+  .blockquote {
+    font-size: $font-size-normal;
+  }
+  .card-body {
+    padding: math.div($gutter-base, 2);
+  }
+}

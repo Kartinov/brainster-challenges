@@ -8,6 +8,8 @@
 $font-family-base:           'Open Sans', sans-serif;
 $font-family-secondary:      'Nunito', sans-serif;
 
+$font-size-normal:           rem-calc(16);
+
 // Size settings
 $gutter-base:                rem-calc(30);
 
@@ -15,7 +17,7 @@ $gutter-base:                rem-calc(30);
 $white:                    #fff;
 $black:                    #000;
 $gray:                     #525252;
-$light-gray:               #979797;
+$light-gray:               lighten($gray, 40%);
 
 $img_path:                  '../../img/';
 $overlay:                   'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))';

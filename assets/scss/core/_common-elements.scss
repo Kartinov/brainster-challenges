@@ -7,6 +7,9 @@ body {
   margin-bottom: 0;
 }
 
+// Components
+
+// Head section with background image
 .img-head-section {
   min-height: 160px;
   background-repeat: no-repeat;
@@ -14,6 +17,7 @@ body {
   background-attachment: fixed;
 }
 
+// Header block with background image
 header#header-block {
   background: url('#{$img_path}image1.jpg') no-repeat top / cover;
   height: 450px;
