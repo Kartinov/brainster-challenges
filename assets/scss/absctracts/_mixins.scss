@@ -2,35 +2,35 @@
 // X-Small devices (portrait phones, less than 576px)
 
 // Small devices (landscape phones, 576px and up)
-@mixin sm-breakpoint {
+@mixin min-sm-breakpoint {
   @media (min-width: 576px) {
     @content;
   }
 }
 
 // Medium devices (tablets, 768px and up)
-@mixin md-breakpoint {
+@mixin min-md-breakpoint {
   @media (min-width: 768px) {
     @content;
   }
 }
 
 // Large devices (desktops, 992px and up)
-@mixin lg-breakpoint {
+@mixin min-lg-breakpoint {
   @media (min-width: 992px) {
     @content;
   }
 }
 
 // X-Large devices (large desktops, 1200px and up)
-@mixin xl-breakpoint {
+@mixin min-xl-breakpoint {
   @media (min-width: 1200px) {
     @content;
   }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
-@mixin xxl-breakpoint {
+@mixin min-xxl-breakpoint {
   @media (min-width: 1400px) {
     @content;
   }

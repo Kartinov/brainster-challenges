@@ -5,6 +5,8 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10218,6 +10220,7 @@ h3 {
   }
 }
 body {
+  font-family: "Open Sans", sans-serif;
   padding-top: 72px;
 }
 
@@ -10230,6 +10233,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+header#header-block {
+  background: url("../../img/image1.jpg") no-repeat top/cover;
+  height: 450px;
 }
 
 .navbar a.navbar-brand {
@@ -10246,7 +10254,7 @@ body {
   color: #979797;
 }
 .navbar .nav-item.active {
-  border-left: #fff 3px solid;
+  border-left: 3px solid #fff;
 }
 .navbar .nav-link {
   padding: 1rem 1rem !important;
@@ -10265,7 +10273,7 @@ body {
 }
 
 section#homepage-slider .carousel-item {
-  height: 650px;
+  min-height: 70vh;
 }
 section#homepage-slider .carousel-item .carousel-caption {
   top: 50%;
@@ -10302,12 +10310,12 @@ section#homepage-slider .carousel-indicators > li.active {
 }
 section#homepage-slider .carousel-control-prev-icon,
 section#homepage-slider .carousel-control-next-icon {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 section#home-head {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../img/lights.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../img/lights.jpg");
 }
 
 section#video-head {
@@ -10318,13 +10326,8 @@ section#video-head {
   max-width: 550px;
 }
 
-header#header-block {
-  background: url("../../img/image1.jpg") no-repeat top/cover;
-  height: 450px;
-}
-
 section#about-us .aboutus-img {
-  margin-top: -80px;
+  margin-top: -5.625rem;
 }
 
 section#testimonials .carousel-control-prev,
@@ -10337,23 +10340,6 @@ section#blog .blockquote {
 }
 section#blog .card-body {
   padding: 0.8rem;
-}
-
-section#staff hr {
-  border-top-width: 2px;
-}
-section#staff img {
-  width: 50%;
-}
-@media (min-width: 768px) {
-  section#staff img {
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  section#staff img {
-    width: 50%;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

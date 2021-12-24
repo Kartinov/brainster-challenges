@@ -1,0 +1,10 @@
+section#about-us .aboutus-img {
+  margin-top: -($gutter-base * 3);
+}
+
+section#testimonials {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}

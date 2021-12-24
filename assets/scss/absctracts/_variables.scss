@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base:           'Open Sans', sans-serif;
+$font-family-secondary:      'Nunito', sans-serif;
+
+// Size settings
+$gutter-base:                rem-calc(30);
+
+// Color settings
+$white:                    #fff;
+$black:                    #000;
+$gray:                     #525252;
+$light-gray:               #979797;
+
+$img_path:                  '../../img/';
+$overlay:                   'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))';

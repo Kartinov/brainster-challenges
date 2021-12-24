@@ -1,0 +1,97 @@
+// NAVBAR STYLES
+.navbar {
+  a.navbar-brand {
+    margin-left: 1.4rem;
+  }
+  hr.line {
+    border-top-width: 1px;
+    border-top-color: #000;
+    border-bottom-width: 1px;
+    border-bottom-color: $gray;
+    border-bottom-style: solid;
+  }
+  .navbar-brand {
+    color: $light-gray;
+  }
+  .nav-item.active {
+    border-left: 3px solid $white;
+  }
+  .nav-link {
+    padding: 1rem 1rem !important;
+  }
+
+  @include max-md-breakpoint {
+    padding-left: 0;
+    padding-right: 0;
+
+    button.navbar-toggler {
+      margin-right: 1.4rem;
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+    }
+  }
+}
+
+// HOMEPAGE SLIDER STYLES
+section#homepage-slider {
+  .carousel-item {
+    min-height: 70vh;
+    .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
+  }
+  .bg-image {
+    background-size: cover;
+    background-position: top;
+  }
+
+  .bg-image-one {
+    background-image: url('#{$img_path}image2.jpg');
+  }
+
+  .bg-image-two {
+    background-image: url('#{$img_path}image1.jpg');
+  }
+
+  .bg-image-three {
+    background-image: url('#{$img_path}image3.jpg');
+    @include min-xxl-breakpoint {
+      background-position: center;
+    }
+  }
+
+  .carousel-indicators > li {
+    height: 6px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-color: $black;
+    border: 1px solid $white;
+    &.active {
+      background-color: $white;
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: $gutter-base;
+    height: $gutter-base;
+  }
+}
+
+// HOME HEAD SECTION
+section#home-head {
+  background-image: #{$overlay},
+    url('#{$img_path}lights.jpg');
+}
+
+// VIDEO HEAD SECTION
+section#video-head {
+  background-image: #{$overlay},
+    url('#{$img_path}media.jpg');
+}
+.modal-dialog {
+  max-width: 550px;
+}
