@@ -1,4 +1,4 @@
-# Challenge 07 - Bootstrap
+# Challenge 08 - Bootstrap
 - **Student:** Dimche Kartinov
 - **FullStack:** Group 6
 
@@ -6,9 +6,6 @@
 - HTML
 - SASS
 - Bootstrap
-
-## Prerequisites
-- SASS Compiler (Live Sass Compiler, Koala, latest version of Dart Sass installed on your machine..)
 
 ## Getting Started
 To view this project you should follow this simple instructions:
