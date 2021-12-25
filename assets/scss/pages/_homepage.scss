@@ -7,13 +7,10 @@
   }
   hr.line {
     border-top-width: 1px;
-    border-top-color: #000;
+    border-top-color: $black;
     border-bottom-width: 1px;
-    border-bottom-color: $gray;
+    border-bottom-color: $gray-700;
     border-bottom-style: solid;
-  }
-  .navbar-brand {
-    color: $light-gray;
   }
   .nav-item.active {
     border-left: 3px solid $white;

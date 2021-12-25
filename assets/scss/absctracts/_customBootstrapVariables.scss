@@ -1,3 +1,6 @@
+$navbar-dark-brand-color: #adb5bd;
+$navbar-dark-brand-hover-color: lighten($navbar-dark-brand-color, 10%);
+
 $theme-colors: (
   'black': #000,
   'darken': #212121,
