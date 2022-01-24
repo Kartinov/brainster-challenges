@@ -35,7 +35,9 @@
       <div class="col-lg-4 mb-5 mb-lg-0 ">
         <div class="container border border-secondary">
           <p class="border-bottom border-secondary">2. Output</p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum laborum maiores officiis libero facere quia qui, cupiditate optio fugit veritatis aliquid labore maxime perferendis possimus, perspiciatis consequuntur alias commodi molestiae nulla odio atque animi! Voluptates, vel dicta. Possimus dolorem soluta doloribus natus inventore, recusandae suscipit quis. Accusantium facilis non vitae.
+
+          <p><?= $hourMsg; ?></p>
+
         </div>
       </div>
       <div class="col-lg-4 mb-5 mb-lg-0">
