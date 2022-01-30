@@ -32,21 +32,21 @@ if ($hourNow > 18) {
 // First check if user has already voted
 if ($rated) {
   $ratingMsg = "You already voted";
-} elseif ((is_int($rating)) && ($rating > 0 && $rating <= 10)) {
+} elseif ((is_numeric($rating)) && ($rating > 0 && $rating <= 10)) {
   $ratingMsg = "Thanks for voting";
 }
 
 $voters = [
-  "Patrick" => [false, 9],
-  "Derick"  => [true, 9],
-  "John"    => [true, 5],
-  "Jack"    => [false, 5],
-  "Taylor"  => [true, 3],
-  "Kevin"   => [false, 68],
-  "Joe"     => [true, 10],
-  "Katy"    => [true, 6],
-  "Selena"  => [false, 0],
-  "James"   => [true, 9]
+  "Patrick" => "false,5",
+  "Derick"  => "true,9",
+  "John"    => "true,5",
+  "Jack"    => "false,5",
+  "Taylor"  => "true,3",
+  "Kevin"   => "false,68",
+  "Joe"     => "true,10",
+  "Katy"    => "true,6",
+  "Selena"  => "false,0",
+  "James"   => "true,9"
 ];
 
 // Loop is written in index.php
