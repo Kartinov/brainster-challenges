@@ -1,50 +1,52 @@
 <?php
+// This file is required in index.php
+// The results are printed in index.php
+$title = "Challenge 11 - PHP";
 
-// Variables
-$name = "Kevin";
-$mainPerson = "Kathrin";
-$welcomeMsg = "Nice name"; // Default message
+$name      = "Kathrin";
+$mainName  = "Kathrin";
 
-$rating = 1;
-$ratingMsg = "Invalid rating, only numbers between 1 and 10."; // Default message
-
+$rating = 5;
 $rated = true;
 
-$hourNow = date('G'); // Get current Hour
-$hourMsg = "Good morning {$mainPerson}"; // Default message
+// Current Hour 24 Format
+$hourNow = date('G');
+
+// Default messages
+$welcomeMsg = "Nice name";
+$ratingMsg  = "Invalid rating, only numbers between 1 and 10.";
+$hourMsg    = "Good morning {$mainName}";
 
 // Check for a variable value and store a welcome message.
-if ($name == $mainPerson)
-{
-  $welcomeMsg = "Hello {$mainPerson}";
+if ($name == $mainName) {
+  $welcomeMsg = "Hello {$mainName}";
 }
-
-// Checks if $rating is integer _ IF NOT default msg remains
-if (is_int($rating))
-{
-  // Checks if $rating has a valid rate number.
-  if ($rating > 0 && $rating <= 10)
-  {
-    // Check if a user has voted.
-    if ($rated)
-    {
-      $ratingMsg = "You already voted";
-    }
-    else
-    {
-      $ratingMsg = "Thanks for voting";
-    }
-  }
-}
-
-
 
 // Store message in variable based on current hour
-if ($hourNow > 18)
-{
-  $hourMsg = "Good afternoon {$mainPerson}";
+if ($hourNow > 18) {
+  $hourMsg = "Good evening {$mainName}";
+} elseif ($hourNow > 11) {
+  $hourMsg = "Good afternoon {$mainName}";
 }
-elseif ($hourNow > 11)
-{
-  $hourMsg = "Good evening {$mainPerson}";
+
+// First check if user has already voted
+if ($rated) {
+  $ratingMsg = "You already voted";
+} elseif ((is_int($rating)) && ($rating > 0 && $rating <= 10)) {
+  $ratingMsg = "Thanks for voting";
 }
+
+$voters = [
+  "Patrick" => [false, 9],
+  "Derick"  => [true, 9],
+  "John"    => [true, 5],
+  "Jack"    => [false, 5],
+  "Taylor"  => [true, 3],
+  "Kevin"   => [false, 68],
+  "Joe"     => [true, 10],
+  "Katy"    => [true, 6],
+  "Selena"  => [false, 0],
+  "James"   => [true, 9]
+];
+
+// Loop is written in index.php

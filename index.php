@@ -4,48 +4,69 @@
 <html>
 
 <head>
-  <title>Challenge 11 - PHP</title>
+  <title><?= $title ?></title>
   <meta charset="utf-8" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="author" content="Dimche Kartinov">
+  <meta name="description" content="Challenge using if statements, loops, associative arra">
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
   <!-- Latest compiled and minified Bootstrap 4.6.1 CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-  <!-- Latest Font-Awesome CDN -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 
 <body>
 
   <div class="container-fluid mt-3">
-    <h1 class="text-center">Challenge 11 - PHP</h1>
+    <h1 class="text-center"><?= $title ?></h1>
     <div class="row mt-5">
-      <div class="col-lg-4 mb-5 mb-lg-0">
+      <div class="col-12 mb-5">
+        <h2 class="text-center">1. Output</h2>
         <div class="container border border-secondary">
-          <p class="border-bottom border-secondary">1. Output</p>
-
           <p><?= $welcomeMsg; ?></p>
-          <p><?= $ratingMsg; ?></p>
-
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5 mb-lg-0 ">
-        <div class="container border border-secondary">
-          <p class="border-bottom border-secondary">2. Output</p>
-
+          <p>It's <?= $hourNow; ?> o'clock</p>
           <p><?= $hourMsg; ?></p>
+          <p><?= $ratingMsg; ?></p>
+        </div>
+      </div>
 
-        </div>
-      </div>
-      <div class="col-lg-4 mb-5 mb-lg-0">
+      <div class="col-12">
+        <h2 class="text-center">2. Output</h2>
         <div class="container border border-secondary">
-          <p class="border-bottom border-secondary">2. Output</p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum laborum maiores officiis libero facere quia qui, cupiditate optio fugit veritatis aliquid labore maxime perferendis possimus, perspiciatis consequuntur alias commodi molestiae nulla odio atque animi! Voluptates, vel dicta. Possimus dolorem soluta doloribus natus inventore, recusandae suscipit quis. Accusantium facilis non vitae.
+          <div class="row">
+
+            <?php
+            foreach ($voters as $human => $voteInfo) {
+              $rated  = $voteInfo[0];
+              $rating = $voteInfo[1];
+
+              $welcomeMsg = "Nice name";
+              $ratingMsg  = "Invalid rating, only numbers between 1 and 10.";
+              $hourMsg    = "Good morning {$human}";
+
+              if ($hourNow > 18) {
+                $hourMsg = "Good evening {$human}";
+              } elseif ($hourNow > 11) {
+                $hourMsg = "Good afternoon {$human}";
+              }
+
+              if ($rated) {
+                $ratingMsg = "You already voted";
+              } elseif ((is_int($rating)) && ($rating > 0 && $rating <= 10)) {
+                $ratingMsg = "Thanks for voting";
+              }
+            ?>
+
+              <!-- LOOP Output -->
+              <div class="col-md-6 col-lg-4 border">
+                <?= "<p>$hourMsg</p>"; ?>
+                <?= "<p>$ratingMsg</p>"; ?>
+              </div>
+
+            <?php } ?>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
   </div>
