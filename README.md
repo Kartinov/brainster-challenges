@@ -4,6 +4,7 @@ Every challenge it's a separate branch
 - **FullStack:** Group 6
 
 ## Challenges
+- [ ] Challenge 12 - PHP
 - [x] Challenge 11 - PHP
 - [x] Challenge 09 - MySQL
 - [x] Challenge 08 - Bootstrap
