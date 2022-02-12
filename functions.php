@@ -1,22 +1,5 @@
 <?php
 
-// Function that converts DECIMAL NUM. INTO BINARY NUM.
-function decimalToBinary($number) {
-  $n = abs($number);
-  $binaryArr = [];
-  $binaryNum = '';
-
-  for ($i = 0; $n > 0; $i++) {
-    $binaryArr[$i] = $n % 2;
-    $n = floor($n / 2);
-  }
-
-  for ($i -= 1; $i >= 0; $i--) {
-    $binaryNum .= $binaryArr[$i];
-  }
-  return $binaryNum;
-}
-
 // Function that returns an array of roman values as keys and their values as value.
 function romanMap() {
   $romanMap = [
@@ -37,7 +20,24 @@ function romanMap() {
   return $romanMap;
 }
 
-// Function that converts DECIMAL NUM. INTO ROMAN NUM.
+// ========== DECIMAL TO BINARY ==========
+function decimalToBinary($number) {
+  $n = abs($number);
+  $binaryArr = [];
+  $binaryNum = '';
+
+  for ($i = 0; $n > 0; $i++) {
+    $binaryArr[$i] = $n % 2;
+    $n = floor($n / 2);
+  }
+
+  for ($i -= 1; $i >= 0; $i--) {
+    $binaryNum .= $binaryArr[$i];
+  }
+  return $binaryNum;
+}
+
+// ========== DECIMAL TO ROMAN UP TO 3999 ==========
 function decimalToRoman($number) {
   if ($number < 4000) {
     $romanMap = romanMap();
@@ -56,4 +56,17 @@ function decimalToRoman($number) {
   } else {
     return "Invalid number please input numbers less than 4000";
   }
+}
+
+// ========== BINARY TO DECIMAL ==========
+function binaryToDecimal($number) {
+  $result = 0;
+  $base = 1;
+
+  for($number; $number; ($number /= 10)) {
+    $lastDigit = $number % 10;
+    $result += $lastDigit * $base;
+    $base *= 2;
+  }
+  return $result;
 }
