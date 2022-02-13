@@ -1,4 +1,3 @@
-# Brainster Challenges
-Every challenge it's a separate branch
+# Challenge 12 - PHP 
 - **Student:** Dimche Kartinov
 - **FullStack:** Group 6
