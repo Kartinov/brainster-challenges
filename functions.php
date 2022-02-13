@@ -3,12 +3,12 @@
 // Function that returns an array of roman values as keys and their values as value.
 function romanMap() {
   $romanMap = [
-    '|M|' => 1000000,
-    '|D|' => 500000,
-    '|C|' => 100000,
-    '|L|' => 50000,
-    '|X|' => 10000,
-    '|V|' => 5000,
+    'Z' => 1000000,
+    'W' => 500000,
+    'K' => 100000,
+    'J' => 50000,
+    'Q' => 10000,
+    'R' => 5000,
     'M'  => 1000,
     'CM' => 900,
     'D'  => 500,
@@ -111,7 +111,7 @@ function formatCheckAndConvert($number) {
     return $errorMessage;
   }
 
-  if (preg_match('/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', strtoupper($number))) {
+  if (preg_match('/^(M{0,4})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})(Z{0,3})(KZ|KW|W?K{0,3})(QK|QJ|J?Q{0,3})(MQ|MR|Q?R{0,3})$/', strtoupper($number))) {
     $converted['roman']    = $number;
     $converted['decimal']  = romanToDecimal($number);
     $converted['binary']   = decimalToBinary($converted['decimal']);
@@ -127,6 +127,7 @@ function formatCheckAndConvert($number) {
   return $errorMessage;
 }
 
+// Function that accept one array argument and convert each number in array and print it.
 function checkAndPrintArrayValues($array) {
   for ($i = 0; $i < count($array); $i++) {
     $conv = formatCheckAndConvert($array[$i]);
@@ -137,7 +138,7 @@ function checkAndPrintArrayValues($array) {
         echo "{$key}: {$val}<br>";
       }
     } elseif (is_string($conv)) {
-      echo  "{$conv}";
+      echo  "{$array[$i]} | {$conv}";
     }
     echo "</div>";
   }

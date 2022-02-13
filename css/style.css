@@ -4,8 +4,9 @@
 }
 
 .result {
-  border-radius: 15px;
   background-color: cornsilk;
+  box-shadow: 3px 3px 5px #000;
+  border-radius: 15px;
   padding: 15px;
-  margin: 5px;
+  margin: 15px;
 }
