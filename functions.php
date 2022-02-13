@@ -109,9 +109,9 @@ function formatCheckAndConvert($number) {
     }
     $errorMessage = "Decimal number should not start with 0.";
     return $errorMessage;
-   }
- 
-   if (preg_match('/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', strtoupper($number))) {
+  }
+
+  if (preg_match('/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', strtoupper($number))) {
     $converted['roman']    = $number;
     $converted['decimal']  = romanToDecimal($number);
     $converted['binary']   = decimalToBinary($converted['decimal']);
@@ -125,4 +125,20 @@ function formatCheckAndConvert($number) {
     return $converted;
   }
   return $errorMessage;
+}
+
+function checkAndPrintArrayValues($array) {
+  for ($i = 0; $i < count($array); $i++) {
+    $conv = formatCheckAndConvert($array[$i]);
+
+    echo "<div class='result'>";
+    if (is_array($conv)) {
+      foreach ($conv as $key => $val) {
+        echo "{$key}: {$val}<br>";
+      }
+    } elseif (is_string($conv)) {
+      echo  "{$conv}";
+    }
+    echo "</div>";
+  }
 }
