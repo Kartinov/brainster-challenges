@@ -87,9 +87,39 @@ function romanToDecimal($roman) {
 
   foreach ($romanMap as $key => $value) {
     while (strpos($roman, $key) === 0) {
-      $result += $value; // 10
+      $result += $value;
       $roman = substr($roman, strlen($key));
     }
   }
   return $result;
+}
+
+function formatCheckAndConvert($number) {
+  $string = str_split($number);
+  $converted = [];
+
+  if (($number[0] == "+" || $number[0] == "-")) {
+    if ($number[1] > 0) {
+      $converted['decimal'] = $number;
+      $converted['binary']  = decimalToBinary($number);
+      $converted['roman']   = decimalToRoman($number);
+      return $converted;
+    }
+    $errorMessage = "Decimal number should not start with 0.";
+    return $errorMessage;
+   }
+ 
+   if (preg_match('/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', strtoupper($number))) {
+    $converted['roman']    = $number;
+    $converted['decimal']  = romanToDecimal($number);
+    $converted['binary']   = decimalToBinary($converted['decimal']);
+    return $converted;
+  }
+
+  if (preg_match('~^[01]+$~', $number)) {
+    $converted['binary']   = $number;
+    $converted['decimal']  = binaryToDecimal($number);
+    $converted['roman']    = decimalToRoman($converted['decimal']);
+    return $converted;
+  }
 }
