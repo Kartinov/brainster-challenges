@@ -94,9 +94,11 @@ function romanToDecimal($roman) {
   return $result;
 }
 
+// Function that accepts one argument as decimal/roman/binary number and returns an array of converted number
 function formatCheckAndConvert($number) {
   $string = str_split($number);
   $converted = [];
+  $errorMessage = "Invalid number. This number can not be converted.";
 
   if (($number[0] == "+" || $number[0] == "-")) {
     if ($number[1] > 0) {
@@ -122,4 +124,5 @@ function formatCheckAndConvert($number) {
     $converted['roman']    = decimalToRoman($converted['decimal']);
     return $converted;
   }
+  return $errorMessage;
 }
