@@ -75,9 +75,8 @@ function decimalToRoman($number) {
       }
     }
     return $result;
-  } else {
-    return "Invalid number please input numbers less than {$upTo}}";
   }
+  return "Invalid number please input numbers less than {$upTo}}";
 }
 
 // ========== ROMAN TO DECIMAL ==========
@@ -94,4 +93,3 @@ function romanToDecimal($roman) {
   }
   return $result;
 }
-
