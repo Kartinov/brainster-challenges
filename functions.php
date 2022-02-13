@@ -3,6 +3,12 @@
 // Function that returns an array of roman values as keys and their values as value.
 function romanMap() {
   $romanMap = [
+    '|M|' => 1000000,
+    '|D|' => 500000,
+    '|C|' => 100000,
+    '|L|' => 50000,
+    '|X|' => 10000,
+    '|V|' => 5000,
     'M'  => 1000,
     'CM' => 900,
     'D'  => 500,
@@ -37,9 +43,25 @@ function decimalToBinary($number) {
   return $binaryNum;
 }
 
-// ========== DECIMAL TO ROMAN UP TO 3999 ==========
+// ========== BINARY TO DECIMAL ==========
+function binaryToDecimal($number) {
+  $result = 0;
+  $base = 1;
+
+  for ($number; $number; ($number /= 10)) {
+    $lastDigit = $number % 10;
+    $result   += $lastDigit * $base;
+    $base     *= 2;
+  }
+  return $result;
+}
+
+// ========== DECIMAL TO ROMAN UP TO 3999999 ==========
+// This is extended function up to 3999999, previous was up to 3999.
+// I keep one function, if function need to print up to 3999, just change $upTo variable.
 function decimalToRoman($number) {
-  if ($number < 4000) {
+  $upTo = 3999999;
+  if ($number < $upTo) {
     $romanMap = romanMap();
     $result = '';
 
@@ -54,19 +76,22 @@ function decimalToRoman($number) {
     }
     return $result;
   } else {
-    return "Invalid number please input numbers less than 4000";
+    return "Invalid number please input numbers less than {$upTo}}";
   }
 }
 
-// ========== BINARY TO DECIMAL ==========
-function binaryToDecimal($number) {
+// ========== ROMAN TO DECIMAL ==========
+function romanToDecimal($roman) {
+  $roman = strtoupper($roman);
+  $romanMap = romanMap();
   $result = 0;
-  $base = 1;
 
-  for($number; $number; ($number /= 10)) {
-    $lastDigit = $number % 10;
-    $result += $lastDigit * $base;
-    $base *= 2;
+  foreach ($romanMap as $key => $value) {
+    while (strpos($roman, $key) === 0) {
+      $result += $value; // 10
+      $roman = substr($roman, strlen($key));
+    }
   }
   return $result;
 }
+
