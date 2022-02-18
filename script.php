@@ -3,11 +3,11 @@
 // The results are printed in index.php
 $title = "Challenge 11 - PHP";
 
-$name      = "Kathrin";
+$name      = "Kevin";
 $mainName  = "Kathrin";
 
 $rating = 5;
-$rated = true;
+$rated  = false;
 
 // Current Hour 24 Format
 $hourNow = date('G');
@@ -18,7 +18,7 @@ $ratingMsg  = "Invalid rating, only numbers between 1 and 10.";
 $hourMsg    = "Good morning {$mainName}";
 
 // Check for a variable value and store a welcome message.
-if ($name == $mainName) {
+if ($name === $mainName) {
   $welcomeMsg = "Hello {$mainName}";
 }
 
@@ -32,10 +32,11 @@ if ($hourNow > 18) {
 // First check if user has already voted
 if ($rated) {
   $ratingMsg = "You already voted";
-} elseif ((is_numeric($rating)) && ($rating > 0 && $rating <= 10)) {
+} elseif ((is_int($rating)) && ($rating > 0 && $rating <= 10)) {
   $ratingMsg = "Thanks for voting";
 }
 
+// Array format is created based on Challenge specification.
 $voters = [
   "Patrick" => "false,5",
   "Derick"  => "true,9",

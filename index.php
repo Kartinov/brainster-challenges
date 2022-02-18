@@ -36,10 +36,10 @@
 
             <?php
             foreach ($voters as $human => $voteInfo) {
-              $voteArr = explode(",", "$voteInfo");
+              $voteArr = explode(",", $voteInfo);
 
               $rated  = $voteArr[0];
-              $rating = $voteArr[1];
+              $rating = (int)$voteArr[1];
 
               $welcomeMsg = "Nice name";
               $ratingMsg  = "Invalid rating, only numbers between 1 and 10.";
@@ -53,7 +53,7 @@
 
               if ($rated == "true") {
                 $ratingMsg = "You already voted";
-              } elseif ((is_numeric($rating)) && ($rating > 0 && $rating <= 10)) {
+              } elseif ((is_int($rating)) && ($rating > 0 && $rating <= 10)) {
                 $ratingMsg = "Thanks for voting";
               }
             ?>
