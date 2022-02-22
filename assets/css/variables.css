@@ -1,4 +1,8 @@
 :root {
+  /* font family */
+  /* MONO: Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro */
+  --font-mono: Dank Mono, Operator Mono, monospace;
+
   --text1-dark: var(--gray-7);
   --text2-dark: var(--gray-8);
 
@@ -14,4 +18,7 @@
   --surface2-dark: var(--gray-8);
   --surface3-dark: var(--gray-7);
   --surface4-dark: var(--gray-6);
+
+  /* base color */
+  --background-color-base: #ffc239;
 }
