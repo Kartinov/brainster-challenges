@@ -1,6 +1,6 @@
 <?php
 $title = "Sign Up";
-require __DIR__ . '/assets/partials/header.php';
+require __DIR__ . '/partials/header.php';
 ?>
 
 <main id="signup" class="flex justify-content-center align-items-center cover">
@@ -10,11 +10,11 @@ require __DIR__ . '/assets/partials/header.php';
         </div>
         <div class="form-body">
             <div class="form-group flex">
-                <label class="form-label" for="username"><i class="fa-solid fa-user-plus"></i></label>
+                <label class="form-label" for="username"><i class="fa-solid fa-user-plus icon"></i></label>
                 <input class="form-input" type="text" name="username" id="username" value="" placeholder="Enter username">
             </div>
             <div class="form-group flex">
-                <label class="form-label" for="password"><i class="fa-solid fa-key"></i></label>
+                <label class="form-label" for="password"><i class="fa-solid fa-key icon"></i></label>
                 <input class="form-input" type="text" name="password" id="password" value="" placeholder="Enter password">
             </div>
             <!-- Errors block -->
@@ -30,4 +30,4 @@ require __DIR__ . '/assets/partials/header.php';
     </form>
 </main>
 
-<?php require __DIR__ . '/assets/partials/footer.php'; ?>
+<?php require __DIR__ . '/partials/footer.php'; ?>
