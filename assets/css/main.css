@@ -190,18 +190,22 @@ a.btn {
 .form-feedback {
   font-weight: var(--font-weight-6);
   background-color: var(--yellow-0);
-  padding: var(--size-2);
   border-radius: var(--radius-2);
   user-select: none;
 }
 
 .form-feedback > * {
   margin-bottom: var(--size-2);
-  text-indent: var(--size-1);
+  padding-inline: var(--size-3);
+}
+
+.form-feedback > :first-child {
+  padding-top: var(--size-2);
 }
 
 .form-feedback > *:last-child {
   margin-bottom: 0;
+  padding-bottom: var(--size-2);
 }
 
 /* Animations */

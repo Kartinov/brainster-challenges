@@ -54,7 +54,7 @@ function print_error_messages(array $errors)
  * Return old value
  */
 function old(string $key): string {
-    return isset($array[$key]) ?: $_SESSION['old'][$key];
+    return isset($_POST[$key]) ? $_POST[$key] : '';
 }
 /**
  * Redirect to given route

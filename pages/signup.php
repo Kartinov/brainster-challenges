@@ -40,11 +40,11 @@ require_once __DIR__ . '/../partials/header.php';
         <div class="form-body">
             <div class="form-group flex">
                 <label class="form-label" for="username"><i class="fa-solid fa-user-plus icon"></i></label>
-                <input class="form-input" type="text" name="username" id="username" value="" placeholder="Enter username">
+                <input class="form-input" type="text" name="username" id="username" value="<?= old('username') ?>" placeholder="Enter username">
             </div>
             <div class="form-group flex">
                 <label class="form-label" for="email"><i class="fa-solid fa-at icon"></i></label>
-                <input class="form-input" type="text" name="email" id="email" value="" placeholder="Enter email">
+                <input class="form-input" type="text" name="email" id="email" value="<?= old('email') ?>" placeholder="Enter email">
             </div>
             <div class="form-group flex">
                 <label class="form-label" for="password"><i class="fa-solid fa-key icon"></i></label>
@@ -61,4 +61,11 @@ require_once __DIR__ . '/../partials/header.php';
     </form>
 </main>
 
-<?php require __DIR__ . '/../partials/footer.php'; ?>
+<?php 
+require __DIR__ . '/../partials/footer.php'; 
+
+// Reset
+$_POST = [];
+$feedback = [];
+
+?>
