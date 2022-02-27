@@ -3,6 +3,9 @@
   /* MONO: Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro */
   --font-mono: Dank Mono, Operator Mono, monospace;
 
+  /* --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; */
+  --font-sans: Roboto, -apple-system, Segoe UI, sans-serif;
+
   --text1-dark: var(--gray-7);
   --text2-dark: var(--gray-8);
 
