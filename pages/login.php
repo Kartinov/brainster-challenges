@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../autoload.php";
 
 ban_get_usage();
+guestsOnly();
 
 $title      = "Sign Up";
 $style_path = "../assets/css/main.css";

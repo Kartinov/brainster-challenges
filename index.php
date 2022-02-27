@@ -1,4 +1,10 @@
 <?php
+
+require_once __DIR__ . "/autoload.php";
+
+ban_get_usage();
+guestsOnly();
+
 $title = "Sign Up & Login Page";
 require __DIR__ . '/partials/header.php';
 ?>

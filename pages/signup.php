@@ -3,6 +3,7 @@
 require_once __DIR__ . "/../autoload.php";
 
 ban_get_usage();
+guestsOnly();
 
 $title      = "Sign Up";
 $style_path = "../assets/css/main.css";
@@ -11,6 +12,9 @@ $feedback = [
     'errors'      => [],
     'soft_errors' => []
 ];
+
+$user = username_strength('Dimche123');
+var_dump($user);
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
@@ -22,9 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $username = trim($_POST['username']);
         $email    = trim($_POST['email']);
         $password = trim($_POST['password']);
+
+        
+
+        $password   = password_hash($password, PASSWORD_BCRYPT);
+        $registered = file_put_contents(USERS_FILE, "{$email},{$username}={$password}" . PHP_EOL, FILE_APPEND);
+
+        if ($registered) {
+            $_SESSION['user'] = $username;
+            redirect(SERVER_APP_PATH . "/pages/dashboard.php");
+        }
     }
 }
-
 echo '<pre>';
 print_r($feedback);
 echo '</pre>';
@@ -61,11 +74,11 @@ require_once __DIR__ . '/../partials/header.php';
     </form>
 </main>
 
-<?php 
-require __DIR__ . '/../partials/footer.php'; 
+<?php
+require __DIR__ . '/../partials/footer.php';
 
 // Reset
-$_POST = [];
+$_POST    = [];
 $feedback = [];
 
 ?>
