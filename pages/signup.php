@@ -13,9 +13,6 @@ $feedback = [
     'soft_errors' => []
 ];
 
-$user = username_strength('Dimche123');
-var_dump($user);
-
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Check if there is empty value submitted
@@ -23,12 +20,33 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         // Store message in array
         $feedback['errors'][] = get_invalid_message('required');
     } else {
-        $username = trim($_POST['username']);
-        $email    = trim($_POST['email']);
+        $username = strtolower(trim($_POST['username']));
+        $email    = strtolower(trim($_POST['email']));
         $password = trim($_POST['password']);
 
-        
+        // USERNAME VALIDATION
+        if (!field_length($username, 3, 17)) {
+            $feedback['errors']['username'] = get_invalid_message('username_length');
+        } else if (!username_strength($username)) {
+            $feedback['errors']['username'] = get_invalid_message('username_strength');
+        }
 
+        // EMAIL VALIDATION
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $feedback['errors']['email'] = get_invalid_message('email_format');
+        } else if (!email_strength($email)) {
+            $feedback['errors']['email'] = get_invalid_message('email_strength');
+        }
+
+        // PASSWORD VALIDATION
+        if (!field_length($password, 5, 17)) {
+            $feedback['errors']['password'] = get_invalid_message('password_length');
+        } else if (!password_strength($password)) {
+            $feedback['errors']['password'] = get_invalid_message('password_strength');
+        }
+    }
+
+    if (empty($feedback['errors']) && empty($feedback['soft_errors'])) {
         $password   = password_hash($password, PASSWORD_BCRYPT);
         $registered = file_put_contents(USERS_FILE, "{$email},{$username}={$password}" . PHP_EOL, FILE_APPEND);
 
@@ -38,9 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 }
-echo '<pre>';
-print_r($feedback);
-echo '</pre>';
 
 require_once __DIR__ . '/../partials/header.php';
 ?>

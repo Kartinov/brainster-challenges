@@ -55,7 +55,13 @@ function has_array_empty_value(array $data): bool
 function get_invalid_message(string $key): string
 {
     $invalid_messages = [
-        'required' => 'All fields are required.',
+        'required'          => 'All fields are required.',
+        'username_length'   => 'Username need to be between 4 and 16 chars',
+        'username_strength' => 'Username cannot contain empty spaces or special signs',
+        'email_format'      => 'Not valid email format',
+        'email_strength'    => 'Email must have at least 5 characters before @',
+        'password_length'   => 'Password need to be between 6 and 16 chars',
+        'password_strength' => 'Password must have at least one number, one special sign and one uppercase letter',
     ];
 
     return $invalid_messages[$key];
@@ -121,12 +127,8 @@ function username_strength(string $username): bool
  */
 function email_strength(string $email): bool
 {
-    $user = strstr($email, '@', true);
-
-    if (strlen($user) < 5) {
-        return false;
-    }
-    return true;
+    $before = strstr($email, '@', true);
+    return strlen($before) < 5 ? false : true;
 }
 
 /**
@@ -147,3 +149,13 @@ function password_strength($password): bool
     return true;
 }
 
+/**
+ * Checks minimum length
+ * @param string $field, int $min, int $max
+ * @return bool
+ */
+function field_length(string $field, int $min, int $max): bool
+{
+    $fieldLength = strlen($field);
+    return $fieldLength > $min && $fieldLength < $max ? true : false;
+}
