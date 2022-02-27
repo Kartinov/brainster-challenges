@@ -1,10 +1,17 @@
 <?php
-$title = "Login";
-require __DIR__ . '/partials/header.php';
+
+require_once __DIR__ . "/../autoload.php";
+
+ban_get_usage();
+
+$title      = "Sign Up";
+$style_path = "../assets/css/main.css";
+
+require_once __DIR__ . '/../partials/header.php';
 ?>
 
 <main id="login" class="flex justify-content-center align-items-center cover">
-    <form method="POST" action="" class="form fade-scale">
+    <form class="form fade-scale" method="POST" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <div class="form-title">
             <h2>Login</h2>
         </div>
@@ -17,11 +24,11 @@ require __DIR__ . '/partials/header.php';
                 <label class="form-label" for="password"><i class="fa-solid fa-key icon"></i></label>
                 <input class="form-input" type="text" name="password" id="password" value="" placeholder="Enter password">
             </div>
-            <!-- Errors block -->
-            <div class="form-group form-errors">
-                <p>Error message one</p>
-                <p>Error message two</p>
-                <p>Error message three</p>
+            <!-- Form feedback block -->
+            <div class="form-group form-feedback">
+                <p class="text-error">error messages</p>
+                <p class="text-info">error messages</p>
+                <p class="text-success">error messages</p>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-dark uppercase">log in</button>
@@ -30,4 +37,4 @@ require __DIR__ . '/partials/header.php';
     </form>
 </main>
 
-<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php require __DIR__ . '/../partials/footer.php'; ?>

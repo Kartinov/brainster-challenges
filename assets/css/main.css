@@ -55,6 +55,20 @@ body {
   background-color: transparent;
 }
 
+/* Colors */
+
+.text-error {
+  color: var(--red-8);
+}
+
+.text-info {
+  color: var(--yellow-7);
+}
+
+.text-success {
+  color: var(--teal-6);
+}
+
 /* Buttons */
 a.btn {
   width: var(--size-13);
@@ -172,9 +186,8 @@ a.btn {
   margin-bottom: var(--size-4);
 }
 
-/* errors block styles */
-.form-errors {
-  color: var(--red-8);
+/* form feedback block styles */
+.form-feedback {
   font-weight: var(--font-weight-6);
   background-color: var(--yellow-0);
   padding: var(--size-2);
@@ -182,11 +195,12 @@ a.btn {
   user-select: none;
 }
 
-.form-errors > * {
+.form-feedback > * {
   margin-bottom: var(--size-2);
+  text-indent: var(--size-1);
 }
 
-.form-errors > *:last-child {
+.form-feedback > *:last-child {
   margin-bottom: 0;
 }
 
@@ -194,5 +208,5 @@ a.btn {
 .fade-scale {
   animation: var(--animation-scale-down) reverse, var(--animation-fade-out) reverse;
   animation-timing-function: var(--ease-squish-5);
-  animation-duration: 400ms;
+  animation-duration: 300ms;
 }

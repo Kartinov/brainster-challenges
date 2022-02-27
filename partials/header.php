@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Form">
     <meta name="author" content="Dimche Kartinov">
-    <title><?= $title ?></title>
+    <title><?= $title; ?></title>
 
     <!-- font awesome script -->
     <script src="https://kit.fontawesome.com/7a8bd4c4d7.js" crossorigin="anonymous"></script>
 
     <!-- style css -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="<?= $style_path ?? "./assets/css/main.css"; ?>">
 </head>
 
 <body>

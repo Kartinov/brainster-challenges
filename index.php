@@ -8,4 +8,6 @@ require __DIR__ . '/partials/header.php';
     <a href="./pages/login.php" class="btn btn-lg btn-dark fade-scale">login</a>
 </main>
 
-<?php require __DIR__ . '/partials/footer.php'; ?>
+<?php
+
+require __DIR__ . '/partials/footer.php'; ?>
