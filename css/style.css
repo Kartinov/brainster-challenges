@@ -3,9 +3,12 @@
     scroll-behavior: smooth;
 }
 
+/* Html font-size across the page */
 html {
     font-size: 16px;
 }
+
+/* Resets */
 
 body {
     margin: 0;
@@ -21,67 +24,146 @@ p {
 ul {
     margin: 0;
     padding: 0;
-    font-size: 0;
+    font-size: 0; /* whitespace fix */
 }
 
 img {
     max-width: 100%;
 }
 
-header {
-    width: 80%;
-    padding-top: 10px;
+a {
+    text-decoration: none;
+}
+
+img,
+a {
+    display: inline-block;
+}
+
+/* General styles */
+
+li,
+.logo {
+    display: inline-block;
+}
+
+.info {
+    float: left;
+    padding: 20px;
+}
+
+.info > h3 {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.info p {
+    padding-bottom: 16px;
+}
+
+h3:not(.work h3),
+p,
+small,
+li > a {
+    color: #fff;
+}
+
+.apple-devices-image h1,
+footer p {
+    margin-bottom: 0;
+}
+
+/* clear fix class */
+.clear::after {
+    content: '';
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+/* Classes with single declaration */
+.mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
 
-header .logo {
+.text-center {
+    text-align: center;
+}
+
+.word-s-4 {
+    word-spacing: 4px;
+}
+
+/*
+    Page components styles
+*/
+
+/* Header styles */
+
+header {
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
     width: 35px;
 }
 
-header nav {
+.navigation {
     float: right;
     margin-top: 10px;
 }
 
-nav > ul li a {
-    font-size: 0.9rem;
+.navigation a {
+    font-size: 1.2rem;
     border-bottom: 2px solid transparent;
-    transition: color 0.3s ease-out, border-bottom 0.3s ease-out;
+    transition: color 0.2s ease-out, border-bottom 0.3s ease-out;
 }
 
-nav > ul li a:hover {
+.navigation a:hover {
     color: #ccc;
     border-bottom: 2px solid #ff6161;
 }
 
-nav > ul li:not(:last-child) {
+.navigation > ul li:not(:last-child) {
     margin-right: 15px;
 }
 
-.apple-devices-image {
-    margin: 0 auto;
+/* Hero image */
+.hero-image {
     width: 500px;
 }
 
+/* Navigation boxes styles */
 .nav-box {
+    height: 130px;
     width: 25%;
     float: left;
-    padding: 10px 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.nav-box > i {
+.nav-box > .icon {
     font-size: 3.4rem;
-    margin-bottom: 14px;
 }
 
+.nav-box > h2 {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+/* Content boxes styles */
 .box {
     width: 50%;
+    height: 280px;
 }
 
 .box > .device-img {
     width: 220px;
-    margin: 0 auto;
 }
 
 .box p {
@@ -89,12 +171,15 @@ nav > ul li:not(:last-child) {
     text-indent: 20px;
 }
 
+/* Company work styles */
+
 .work {
     width: 33.333%;
+    height: 150px;
 }
 
 .social-icons {
-    padding: 80px 0;
+    padding: 60px 15px;
 }
 
 .social-icons > ul li:not(:last-child) {
@@ -105,68 +190,10 @@ nav > ul li:not(:last-child) {
     font-size: 2rem;
 }
 
-.social-icons i {
-    line-height: normal;
-}
+/* Footer styles */
 
 footer {
     padding: 20px 0;
-}
-
-/* General */
-
-li,
-.logo {
-    display: inline-block;
-}
-
-li > a {
-    text-decoration: none;
-}
-
-.nav-box,
-.info > h3,
-.work,
-.social-icons,
-footer {
-    text-align: center;
-}
-
-.info {
-    float: left;
-    padding: 20px 20px 6px;
-}
-
-.info > h3 {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-}
-
-h3:not(.work h3),
-p,
-small,
-li > a {
-    color: #fff;
-}
-
-.info p {
-    padding-bottom: 16px;
-}
-
-.word-s-4 {
-    word-spacing: 4px;
-}
-
-.apple-devices-image h1,
-footer p {
-    margin-bottom: 0;
-}
-
-.clear::after {
-    content: '';
-    clear: both;
-    display: block;
-    width: 100%;
 }
 
 /* Colors */
