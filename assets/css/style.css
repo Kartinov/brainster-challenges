@@ -5,6 +5,7 @@
     scroll-behavior: smooth;
 }
 
+/* Resets */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -14,12 +15,15 @@ h1,
 h2,
 h3,
 p,
-ul,
-a,
-i {
+ul {
     margin-top: 0;
-    color: #fff;
 }
+
+/* General Styles */
+
+/* Single declaration classes */
+
+/* END General */
 
 ul {
     padding-left: 0;
@@ -31,12 +35,14 @@ ul li:not(:first-child) {
     margin-left: 15px;
 }
 
-i {
+.icon {
     font-size: 30px;
 }
 
 a {
     text-decoration: 0;
+    display: inline-block;
+    color: inherit;
 }
 
 .landing-text > *:last-child,
@@ -63,9 +69,7 @@ h2 + p {
 }
 
 ul,
-li,
-.logo,
-a {
+li {
     display: inline-block;
 }
 
@@ -120,7 +124,7 @@ article h2 + p {
 }
 
 .box,
-section.icons {
+section#services {
     text-align: center;
 }
 
@@ -187,19 +191,21 @@ header .arrow {
     bottom: 20px;
 }
 
-section.pic-one {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('../images/picture1.jpg');
+.image-one {
+    background-image: url('../images/picture1.jpg');
 }
 
-section.pic-two {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('../images/picture2.jpeg');
+.image-two {
+    background-image: url('../images/picture2.jpeg');
 }
 
-section.pic-three {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('../images/picture3.jpg');
+.image-three {
+    background-image: url('../images/picture3.jpg');
+}
+
+.dark-overlay {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 }
 
 section article {
@@ -212,47 +218,47 @@ section article .col {
     line-height: 1.5;
 }
 
-section.pic-one article {
+section#information article {
     border-top: 5px solid #e44c65;
     padding-top: 40px;
     bottom: 0;
 }
 
-section.pic-one article .col,
-section.icons .col {
+section#information article .col,
+section#services .col {
     float: left;
     width: 33.333%;
 }
 
-section.pic-two article,
-section.pic-three article {
+section#support article,
+section#whyus article {
     width: 500px;
     height: 100%;
 }
 
-section.pic-two article {
+section#support article {
     border-left: 5px solid rgb(93, 93, 238);
     right: 0;
 }
 
-section.pic-three article {
+section#whyus article {
     border-right: 5px solid rgb(45, 212, 81);
     left: 0;
 }
 
-section.icons {
+section#services {
     padding-bottom: 40px;
 }
 
-section.icons .col {
+section#services .col {
     padding: 80px 40px 30px;
 }
 
-section.icons a {
+section#services a {
     margin-top: 40px;
 }
 
-section.icons i {
+section#services i {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     width: 80px;
@@ -261,7 +267,7 @@ section.icons i {
     margin-bottom: 20px;
 }
 
-section.icons .mb-17 {
+section#services .mb-17 {
     margin-bottom: 17px;
 }
 
@@ -307,6 +313,10 @@ footer p {
     background-color: rgb(228, 78, 103);
 }
 
-.clr-red {
+.text-red {
     color: rgb(228, 78, 103);
+}
+
+.text-white {
+    color: #fff;
 }
