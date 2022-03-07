@@ -189,17 +189,17 @@ header .arrow {
 
 section.pic-one {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('./images/picture1.jpg');
+        url('../images/picture1.jpg');
 }
 
 section.pic-two {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('./images/picture2.jpeg');
+        url('../images/picture2.jpeg');
 }
 
 section.pic-three {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-        url('./images/picture3.jpg');
+        url('../images/picture3.jpg');
 }
 
 section article {
