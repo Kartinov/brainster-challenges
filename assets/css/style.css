@@ -19,11 +19,43 @@ ul {
     margin-top: 0;
 }
 
+a {
+    text-decoration: 0;
+    color: inherit;
+}
+
+li,
+a {
+    display: inline-block;
+}
+
+/* Typography */
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+.text-lead {
+    font-size: 1.25rem;
+}
+
+.icon {
+    font-size: 30px;
+}
+
 /* General Styles */
-
-/* Single declaration classes */
-
-/* END General */
 
 ul {
     padding-left: 0;
@@ -35,97 +67,13 @@ ul li:not(:first-child) {
     margin-left: 15px;
 }
 
-.icon {
-    font-size: 30px;
-}
-
-a {
-    text-decoration: 0;
-    display: inline-block;
-    color: inherit;
-}
-
-.landing-text > *:last-child,
-.col *:last-child,
-.box *:last-child {
-    margin-bottom: 0;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-h2 {
-    font-size: 28px;
-}
-
-h3 {
-    font-size: 22px;
-}
-
-.landing-text p,
-h2 + p {
-    font-size: 20px;
-}
-
-ul,
-li {
-    display: inline-block;
-}
-
-.btn-sing-up {
-    color: inherit;
-    padding: 3px 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-header.banner,
 .parallax {
     min-height: 100vh;
     position: relative;
-    /* filter: brightness(50%); */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.btn {
-    border: 2px solid #e4e4e4d9;
-    background-color: transparent;
-    padding: 15px 30px;
-    border-radius: 4px;
-    color: #e4e4e4d9;
-    margin-top: 20px;
-    transition: border-color 0.4s ease-out;
-}
-
-article .btn:hover {
-    border-color: rgb(93, 197, 238);
-}
-
-.border-top {
-    border-top: 3px solid #e44c65;
-}
-
-.mb-17 {
-    margin-bottom: 17px;
-}
-
-article p {
-    text-align: justify;
-}
-
-article h2 + p {
-    text-align: left;
-}
-
-.box,
-section#services {
-    text-align: center;
 }
 
 .box {
@@ -152,61 +100,97 @@ section#services {
     transform: translate(-50%, -50%);
 }
 
+.dark-overlay {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
 .clearfix::after {
     content: '';
     clear: both;
     display: block;
 }
 
-/* END Global */
+/* Single declaration classes */
 
-header nav {
+.last-child-mb-0 > *:last-child {
+    margin-bottom: 0;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.paragraph-justify p {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.line-height-medium {
+    line-height: 1.5;
+}
+
+/* Buttons */
+
+.btn-sing-up {
+    color: inherit;
+    font-size: 17px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn {
+    border: 2px solid #e4e4e4d9;
+    background-color: transparent;
+    padding: 15px 30px;
+    border-radius: 4px;
+    color: #e4e4e4d9;
+    margin-top: 20px;
+    transition: border-color 0.4s ease-out;
+}
+
+.btn:hover {
+    border-color: rgb(93, 197, 238);
+}
+
+/* Components styles */
+
+/* Header */
+.navigation {
     position: relative;
     top: 20px;
     margin-left: 30px;
     margin-right: 30px;
 }
 
-header nav .logo {
+.navigation .logo {
     position: absolute;
     top: 10px;
     left: 0;
 }
 
-header nav ul {
+.navigation .navigation-links {
     position: absolute;
     right: 0;
 }
 
-header nav ul li {
-    font-size: 16px;
+.navigation .navigation-links li {
+    font-size: 1rem;
 }
 
-header .landing-text {
-    text-align: right;
-}
-
-header .arrow {
+.arrow {
     color: rgba(255, 255, 255, 0.7);
     bottom: 20px;
 }
 
-.image-one {
-    background-image: url('../images/picture1.jpg');
-}
+/* Articles sections styles */
 
-.image-two {
-    background-image: url('../images/picture2.jpeg');
-}
-
-.image-three {
-    background-image: url('../images/picture3.jpg');
-}
-
-.dark-overlay {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-}
+/* Applicable on all article sections */
 
 section article {
     background-color: rgba(39, 40, 51, 0.85);
@@ -215,7 +199,24 @@ section article {
 
 section article .col {
     padding: 40px;
-    line-height: 1.5;
+}
+
+#information .col,
+#services .col {
+    float: left;
+    width: 33.333%;
+}
+
+#support article,
+#whyus article {
+    width: 500px;
+    height: 100%;
+}
+
+/* First section: information */
+
+.image-one {
+    background-image: url('../images/picture1.jpg');
 }
 
 section#information article {
@@ -224,41 +225,44 @@ section#information article {
     bottom: 0;
 }
 
-section#information article .col,
-section#services .col {
-    float: left;
-    width: 33.333%;
+/* Second section: support */
+
+.image-two {
+    background-image: url('../images/picture2.jpeg');
 }
 
-section#support article,
-section#whyus article {
-    width: 500px;
-    height: 100%;
-}
-
-section#support article {
+#support article {
     border-left: 5px solid rgb(93, 93, 238);
     right: 0;
 }
 
-section#whyus article {
+/* Third section: whyus */
+
+.image-three {
+    background-image: url('../images/picture3.jpg');
+}
+
+#whyus article {
     border-right: 5px solid rgb(45, 212, 81);
     left: 0;
 }
 
-section#services {
+/* Services section styles */
+
+#services {
     padding-bottom: 40px;
 }
 
-section#services .col {
+#services .col {
     padding: 80px 40px 30px;
 }
 
-section#services a {
-    margin-top: 40px;
+#services .col:nth-child(2) {
+    border-top: 3px solid #e44c65;
+    margin-bottom: -3px; /* Floating columns fix */
 }
 
-section#services i {
+#services .icon {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     width: 80px;
@@ -267,37 +271,43 @@ section#services i {
     margin-bottom: 20px;
 }
 
-section#services .mb-17 {
-    margin-bottom: 17px;
+#services .btn {
+    margin-top: 40px;
 }
 
-section.newsletter form input {
+/* Newsletter styles */
+
+.input-text,
+.input-submit {
+    font-size: inherit;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 4px;
-    outline: none;
-    font-size: 15px;
 }
 
-section.newsletter form input[type='email'] {
-    padding-left: 15px;
+.input-text {
+    color: inherit;
     background-color: transparent;
+    padding-left: 15px;
     border: 1px solid rgba(255, 255, 255, 0.85);
     width: 340px;
+    outline: none;
 }
 
-section.newsletter form input::placeholder {
-    color: rgba(255, 255, 255, 0.85);
+.input-text:focus {
+    border-color: #272833;
 }
 
-section.newsletter form input[type='submit'] {
+.input-submit {
+    background-color: #fff;
     padding-left: 40px;
     padding-right: 40px;
-    background-color: #fff;
     border: none;
     margin-left: 10px;
     cursor: pointer;
 }
+
+/* Footer styles */
 
 footer p {
     margin-top: 30px;

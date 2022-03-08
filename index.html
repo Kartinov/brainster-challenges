@@ -21,13 +21,13 @@
     </head>
 
     <body class="text-white">
-        <!-- Header with Logo and Navigation Bar -->
-        <header class="banner bg-darkblue">
-            <nav>
+        <!-- Header -->
+        <header class="parallax bg-darkblue">
+            <nav class="navigation">
                 <a class="logo" href="./index.html">
                     <span>Landed</span>
                 </a>
-                <ul>
+                <ul class="navigation-links">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Layouts</a></li>
                     <li><a href="#">Elements</a></li>
@@ -38,27 +38,34 @@
                     </li>
                 </ul>
             </nav>
-            <div class="landing-text center-x-y">
+            <div class="center-x-y text-right last-child-mb-0">
                 <h1>The future has landed</h1>
-                <p>And there are no hoverboards or flying cars.</p>
-                <p>Just apps. Lots of mother flipping apps.</p>
+                <p class="text-lead">
+                    And there are no hoverboards or flying cars.
+                </p>
+                <p class="text-lead">
+                    Just apps. Lots of mother flipping apps.
+                </p>
             </div>
             <i class="fas fa-chevron-down arrow center-x icon"></i>
         </header>
 
         <!-- Main Content is devided in sections -->
         <main>
+            <!-- Company information section -->
             <section id="information" class="image-one parallax">
                 <div class="dark-overlay">
-                    <article class="clearfix">
-                        <div class="col">
+                    <article
+                        class="paragraph-justify line-height-medium clearfix"
+                    >
+                        <div class="col last-child-mb-0">
                             <h2>Expedita dolorem totam veritatis sed.</h2>
-                            <p>
+                            <p class="text-lead">
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Ratione!
                             </p>
                         </div>
-                        <div class="col">
+                        <div class="col last-child-mb-0">
                             <p>
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Deserunt placeat, repudiandae
@@ -70,7 +77,7 @@
                                 repudiandae.
                             </p>
                         </div>
-                        <div class="col">
+                        <div class="col last-child-mb-0">
                             <p>
                                 Lorem ipsum dolor sit, amet consectetur
                                 adipisicing elit. Deserunt placeat, repudiandae
@@ -86,12 +93,15 @@
                 </div>
             </section>
 
+            <!-- Support section -->
             <section id="support" class="image-two parallax">
                 <div class="dark-overlay">
-                    <article class="clearfix">
-                        <div class="col center-y">
+                    <article
+                        class="paragraph-justify line-height-medium clearfix"
+                    >
+                        <div class="col center-y last-child-mb-0">
                             <h2>Quisquam consequuntur mollitia quam quia</h2>
-                            <p>
+                            <p class="text-lead">
                                 Lorem ipsum dolor, sit amet consectetur
                                 adipisicing elit.
                             </p>
@@ -109,12 +119,15 @@
                 </div>
             </section>
 
+            <!-- WhyUs section -->
             <section id="whyus" class="image-three parallax">
                 <div class="dark-overlay">
-                    <article class="clearfix">
-                        <div class="col center-y">
+                    <article
+                        class="paragraph-justify line-height-medium clearfix"
+                    >
+                        <div class="col center-y last-child-mb-0">
                             <h2>Aliquam distinctio tenetur illum eaque</h2>
-                            <p>
+                            <p class="text-lead">
                                 Lorem ipsum dolor, sit amet consectetur
                                 adipisicing elit.
                             </p>
@@ -132,57 +145,58 @@
                 </div>
             </section>
 
-            <section id="services" class="icons bg-darkblue">
-                <div class="box">
+            <!-- Services section -->
+            <section id="services" class="text-center bg-darkblue">
+                <div class="box last-child-mb-0">
                     <h2>Mollitia quam quia ab cupiditate</h2>
-                    <p>
+                    <p class="text-lead">
                         Omnis aliquam distinctio tenetur illum eaque sit
                         repellendus, sequi animi
                     </p>
                 </div>
                 <div class="row clearfix">
-                    <div class="col">
-                        <i class="fab fa-app-store icon"></i>
+                    <div class="col last-child-mb-0">
+                        <i class="fas fa-chart-area icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
                             cupiditate nulla sed omnis
                         </p>
                     </div>
-                    <div class="col border-top">
-                        <i class="fab fa-android mb-17 icon"></i>
+                    <div class="col border-top last-child-mb-0">
+                        <i class="fas fa-comment icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
                             cupiditate nulla sed omnis
                         </p>
                     </div>
-                    <div class="col">
-                        <i class="fas fa-atlas icon"></i>
+                    <div class="col last-child-mb-0">
+                        <i class="fas fa-flask icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
                             cupiditate nulla sed omnis
                         </p>
                     </div>
-                    <div class="col">
-                        <i class="fas fa-award icon"></i>
+                    <div class="col last-child-mb-0">
+                        <i class="fas fa-paper-plane icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
                             cupiditate nulla sed omnis
                         </p>
                     </div>
-                    <div class="col">
-                        <i class="fas fa-balance-scale-right icon"></i>
+                    <div class="col last-child-mb-0">
+                        <i class="fas fa-copy icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
                             cupiditate nulla sed omnis
                         </p>
                     </div>
-                    <div class="col">
-                        <i class="fas fa-bell-slash icon"></i>
+                    <div class="col last-child-mb-0">
+                        <i class="fas fa-lock icon"></i>
                         <h3>Lorem, ipsum dolor.</h3>
                         <p>
                             Quam quia ab cupiditate nulla sed omnis aliquam
@@ -193,22 +207,31 @@
                 <a href="#" class="btn">Mollitia quam quia</a>
             </section>
 
-            <section class="newsletter box bg-red">
+            <!-- Newsletter section -->
+            <section class="newsletter box text-center bg-red last-child-mb-0">
                 <h2>Magna faucibus lorem diam</h2>
-                <p>
+                <p class="text-lead">
                     Distinctio tenetur illum eaque sit repellendus, sequi animi
                 </p>
                 <form>
                     <input
                         type="email"
                         id="email"
+                        class="input-text"
                         placeholder="Your Email Adress"
+                        autocomplete="off"
                     />
-                    <input type="submit" class="text-red" value="Get started" />
+                    <input
+                        type="submit"
+                        class="input-submit text-red"
+                        value="Get started"
+                    />
                 </form>
             </section>
         </main>
-        <footer class="box bg-darkblue">
+
+        <!-- Footer Styles -->
+        <footer class="box text-center bg-darkblue last-child-mb-0">
             <ul class="links">
                 <li>
                     <a href="#" target="_blank">
