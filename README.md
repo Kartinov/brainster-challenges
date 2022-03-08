@@ -8,12 +8,12 @@ Every challenge it's a separate branch
 - [x] Challenge 13 - PHP Forms
 - [X] Challenge 12 - PHP
 - [x] Challenge 11 - PHP
-- [x] Challenge 09 - MySQL
-- [x] Challenge 08 - Bootstrap
-- [x] Challenge 07 - Bootstrap
+- [x] Challenge 09 - ERD, MySQL, SQL Queries
+- [x] Challenge 08 - CSS (SASS) using Bootstrap v4.*
+- [x] Challenge 07 - CSS (SASS) using Bootstrap v4.*
 - [x] Challenge 06 - Push previous challenges to **GitLab**
-- [x] Challenge 05 - Flex & Git
-- [x] Challenge 04 - Flex & SASS
-- [x] Challenge 03 - Flex & `@media`
-- [x] Challenge 02 - CSS Intro
-- [x] Challenge 01 - HTML & CSS
+- [x] Challenge 05 - CSS (SASS, Flex)
+- [x] Challenge 04 - CSS (SASS, Flex)
+- [x] Challenge 03 - CSS (Flex, `@media` queries)
+- [x] Challenge 02 - CSS (Float, Position)
+- [x] Challenge 01 - HTML, CSS (Float)
