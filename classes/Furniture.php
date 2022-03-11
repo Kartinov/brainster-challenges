@@ -3,14 +3,14 @@
 class Furniture
 {
     protected $width;
-    protected $height;
     protected $length;
+    protected $height;
     protected $is_for_seating;
     protected $is_for_sleeping;
 
-    public function __construct(float $width, float $height, float $length)
+    public function __construct(float $width, float $length, float $height)
     {
-        $this->set_width($width)->set_height($height)->set_length($length);
+        $this->set_width($width)->set_length($length)->set_height($height);
     }
 
     /**
@@ -55,26 +55,38 @@ class Furniture
         return $this;
     }
 
-    public function is_for_seating() {
+    public function is_for_seating()
+    {
         return $this->is_for_seating;
     }
 
-    public function set_is_for_sleeping(bool $is_it) {
+    public function set_is_for_sleeping(bool $is_it)
+    {
         $this->is_for_sleeping = $is_it;
         return $this;
     }
 
-    public function is_for_sleeping() {
+    public function is_for_sleeping()
+    {
         return $this->is_for_sleeping;
     }
 
-    function area()
+    public function area()
     {
         return $this->get_width() * $this->get_length();
     }
 
-    function volume()
+    public function volume()
     {
         return $this->area() * $this->get_height();
+    }
+
+    public function print_product_purpose()
+    {
+        if ($this->is_for_sleeping() && $this->is_for_sleeping()) {
+            return "for sleeping and seating";
+        }
+
+        return !$this->is_for_sleeping() ? "seating only" : "sleeping only";
     }
 }

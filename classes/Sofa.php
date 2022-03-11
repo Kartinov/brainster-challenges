@@ -4,9 +4,9 @@ require_once __DIR__ . '/Furniture.php';
 
 class Sofa extends Furniture
 {
-    private $seats;
-    private $armrests;
-    private $length_opened;
+    protected $seats;
+    protected $armrests;
+    protected $length_opened;
 
     /**
      * setters, getters methods
