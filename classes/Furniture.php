@@ -2,11 +2,11 @@
 
 class Furniture
 {
-    private $width;
-    private $height;
-    private $length;
-    private $is_for_seating;
-    private $is_for_sleeping;
+    protected $width;
+    protected $height;
+    protected $length;
+    protected $is_for_seating;
+    protected $is_for_sleeping;
 
     public function __construct(float $width, float $height, float $length)
     {
@@ -77,11 +77,4 @@ class Furniture
     {
         return $this->area() * $this->get_height();
     }
-  
-
- 
-
-  
-
-   
 }
