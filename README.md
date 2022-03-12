@@ -7,7 +7,7 @@ Switch/Checkout between branches to see the challenges.
 
 ## Challenges
 
-- [ ] Challenge 14 - PHP OOP
+- [x] Challenge 14 - PHP OOP
 - [x] Challenge 13 - PHP Forms
 - [x] Challenge 12 - PHP
 - [x] Challenge 11 - PHP
