@@ -1,8 +1,9 @@
 <?php
 
 require_once __DIR__ . '/Furniture.php';
+require_once __DIR__ . '/../interfaces/Printable.php';
 
-class Sofa extends Furniture
+class Sofa extends Furniture implements Printable
 {
     protected $seats;
     protected $armrests;
@@ -46,11 +47,12 @@ class Sofa extends Furniture
 
     public function area_opened()
     {
-        return (!$this->is_for_sleeping())
+        return
+            !$this->is_for_sleeping()
             ?
             "This sofa is for sitting only, it has 
                 {$this->get_armrests()} armrests and {$this->get_seats()} seats."
-            :
-            $this->get_width() * $this->get_length_opened();
+            : (floatval($this->get_width()) * $this->get_length_opened()) .
+            $this->get_unit('cm2');
     }
 }

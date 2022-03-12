@@ -1,6 +1,7 @@
 <?php
 
-class Furniture
+require_once __DIR__ . '/../interfaces/Printable.php';
+class Furniture implements Printable
 {
     protected $width;
     protected $length;
@@ -14,11 +15,11 @@ class Furniture
     }
 
     /**
-     * getters and setters methods
+     * setters and getters methods
      */
     public function set_width($width)
     {
-        $this->width = $width;
+        $this->width = $width . $this->get_unit('cm');
         return $this;
     }
 
@@ -29,7 +30,7 @@ class Furniture
 
     public function set_height($height)
     {
-        $this->height = $height;
+        $this->height = $height . $this->get_unit('cm');
         return $this;
     }
 
@@ -40,7 +41,7 @@ class Furniture
 
     public function set_length($length)
     {
-        $this->length = $length;
+        $this->length = $length . $this->get_unit('cm');
         return $this;
     }
 
@@ -73,20 +74,57 @@ class Furniture
 
     public function area()
     {
-        return $this->get_width() * $this->get_length();
+        return floatval($this->get_width()) * floatval($this->get_length()) .
+            $this->get_unit('cm2');
     }
 
     public function volume()
     {
-        return $this->area() * $this->get_height();
+        return floatval($this->area()) * floatval($this->get_height()) .
+            $this->get_unit('cm3');
     }
 
     public function print_product_purpose()
     {
-        if ($this->is_for_sleeping() && $this->is_for_sleeping()) {
+        if ($this->is_for_sleeping() && $this->is_for_seating()) {
             return "for sleeping and seating";
         }
 
         return !$this->is_for_sleeping() ? "seating only" : "sleeping only";
+    }
+
+    /**
+     * Printable methods shared accross all furniture child classes
+     */
+    public function print()
+    {
+        return "{$this->sneakpeek()}, {$this->print_product_purpose()}, {$this->area()}";
+    }
+
+    public function sneakpeek()
+    {
+        return get_class($this);
+    }
+
+    public function full_info()
+    {
+        return "{$this->print()}, {$this->get_width()}, 
+                {$this->get_length()}, {$this->get_height()}";
+    }
+
+    /**
+     * Get well formated unit
+     * @param string $unit e.g. 'cm2'
+     * @return string
+     */
+    public function get_unit($unit): string
+    {
+        $units = [
+            'cm' => "<var>cm</var>",
+            'cm2' => "<var>cm<sup>2</sup></var>",
+            'cm3' => "<var>cm<sup>3</sup></var>"
+        ];
+
+        return $units[$unit];
     }
 }
