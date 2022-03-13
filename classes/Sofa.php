@@ -4,15 +4,15 @@ require_once __DIR__ . '/Furniture.php';
 
 class Sofa extends Furniture implements Printable
 {
-    protected $seats;
-    protected $length_opened;
+    private $seats;
+    private $length_opened;
 
     public function __construct(...$params)
     {
         parent::__construct(...$params);
 
         // Defaults for Sofa, later can be changed.
-        $this->set_is_for_seating(true)->set_is_for_sleeping(false);
+        $this->set_is_for_seating(true);
     }
 
     /**

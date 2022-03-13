@@ -9,14 +9,14 @@ require_once __DIR__ . '/../interfaces/Printable.php';
  */
 class Furniture implements Printable
 {
-    protected $width;
-    protected $length;
-    protected $height;
-    protected $is_for_seating  = false;
-    protected $is_for_sleeping = false;
+    private $width;
+    private $length;
+    private $height;
+    private $is_for_seating  = false;
+    private $is_for_sleeping = false;
 
     // Chair can have armrests, this need to be shared from Furniture
-    protected $armrests = null;
+    private $armrests = null;
 
     public function __construct($width, $length, $height)
     {
