@@ -4,8 +4,8 @@ require_once __DIR__ . '/../interfaces/Printable.php';
 
 /**
  * The right way | Furniture class have to be Abstract Class, but
- * in the challenge description this class needs to be instantiated on object and
- * some class methods to be printed.
+ * in the challenge description this class needs to be instantiated and
+ * some methods to be printed.
  */
 class Furniture implements Printable
 {

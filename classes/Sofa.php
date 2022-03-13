@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/Furniture.php';
 
-class Sofa extends Furniture implements Printable
+class Sofa extends Furniture
 {
     private $seats;
     private $length_opened;

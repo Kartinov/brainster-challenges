@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/Furniture.php';
 
-class Chair extends Furniture implements Printable
+class Chair extends Furniture
 {
     public function __construct(...$params)
     {

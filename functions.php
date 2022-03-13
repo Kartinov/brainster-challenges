@@ -2,9 +2,9 @@
 
 /**
  * Object origin
- * @param Printable object
+ * @param Furniture object
  */
-function print_class_origin(Printable $class_name)
+function print_class_origin(Furniture $class_name)
 {
     $output = '';
 
