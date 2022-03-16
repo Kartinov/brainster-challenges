@@ -10,8 +10,10 @@ $apple   = new Product('Apple', 5, true);
 
 $market = new MarketStall(['orange' => $orange, 'potato' => $potato, 'almonds' => $almonds]);
 
-// $market->addProductToMarket(['apple' => $apple]);
+$market->addProductsToMarket(['apple' => $apple]);
+
+$b = $market->getItem('orange', 4);
 
 echo '<pre>';
-print_r($market->products);
+print_r($b);
 echo '</pre>';

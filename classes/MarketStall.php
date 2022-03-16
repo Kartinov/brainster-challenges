@@ -20,17 +20,32 @@ class MarketStall
 
     private function verifyProducts(array $array): bool
     {
-        // + To check if all values are objects from Pruduct Class
         $verify = false;
+
         if (!array_is_list($array)) {
             $verify = true;
+
             foreach ($array as $key => $value) {
-                if (strcasecmp($key, $value->getName())) {
+                if ($value instanceof Product) {
+                    if (strcasecmp($key, $value->getName())) {
+                        $verify = false;
+                        break;
+                    }
+                } else {
                     $verify = false;
-                    break;
                 }
             }
         }
+
         return $verify;
+    }
+
+    public function getItem(string $product, int $amount)
+    {
+        if (!array_key_exists($product, $this->products)) {
+            return 0;
+        }
+
+        return ['amount' => $amount, $product => $this->products[$product]];
     }
 }
