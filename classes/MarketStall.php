@@ -9,7 +9,7 @@ class MarketStall
         $this->addProductsToMarket($products);
     }
 
-    public function addProductsToMarket(array $products)
+    public function addProductsToMarket(array $products): bool
     {
         if ($this->verifyProducts($products)) {
             $this->products = array_merge($this->products, $products);
@@ -20,32 +20,23 @@ class MarketStall
 
     private function verifyProducts(array $array): bool
     {
-        $verify = false;
+        if (array_is_list($array)) return 0;
 
-        if (!array_is_list($array)) {
-            $verify = true;
+        foreach ($array as $key => $value) {
+            // Check if $value has Class Product as one of its parents
+            if (!is_a($value, 'Product')) return 0;
 
-            foreach ($array as $key => $value) {
-                if ($value instanceof Product) {
-                    if (strcasecmp($key, $value->getName())) {
-                        $verify = false;
-                        break;
-                    }
-                } else {
-                    $verify = false;
-                }
-            }
+            // Check if $key has the same name with Product Name 
+            if (strcasecmp($key, $value->getName())) return 0;
         }
-
-        return $verify;
+        return 1;
     }
 
-    public function getItem(string $product, int $amount)
+    public function getItem(string $product, int $amount): array|bool
     {
-        if (!array_key_exists($product, $this->products)) {
-            return 0;
+        if (array_key_exists($product, $this->products)) {
+            return ['amount' => $amount, $product => $this->products[$product]];
         }
-
-        return ['amount' => $amount, $product => $this->products[$product]];
+        return 0;
     }
 }
