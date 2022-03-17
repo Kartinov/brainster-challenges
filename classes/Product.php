@@ -1,6 +1,7 @@
 <?php
 
-class Product {
+class Product
+{
     private $name;
     private $price;
     private $sellingByKg;
@@ -10,26 +11,36 @@ class Product {
         $this->setName($name)->setPrice($price)->setSellingByKg($sellingByKg);
     }
 
-    public function setName(string $name) {
+    public function setName(string $name)
+    {
         $this->name = $name;
         return $this;
     }
 
-    public function getName() {
-        return $this->name;
+    public function getName()
+    {
+        return strtolower($this->name);
     }
 
-    public function setPrice(float $price) {
+    public function setPrice(float $price)
+    {
         $this->price = $price;
         return $this;
     }
 
-    public function getPrice() {
+    public function getPrice()
+    {
         return $this->price;
     }
 
-    public function setSellingByKg(bool $sellingByKg) {
+    public function setSellingByKg(bool $sellingByKg)
+    {
         $this->sellingByKg = $sellingByKg;
         return $this;
+    }
+
+    public function sellingBy(): string
+    {
+        return $this->sellingByKg ? 'kgs' : 'gunny sacks';
     }
 }

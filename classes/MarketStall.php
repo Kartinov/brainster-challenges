@@ -32,11 +32,11 @@ class MarketStall
         return 1;
     }
 
-    public function getItem(string $product, int $amount): array|bool
+    public function getItem(string $product, int $amount): array
     {
         if (array_key_exists($product, $this->products)) {
-            return ['amount' => $amount, $product => $this->products[$product]];
+            return ['amount' => $amount, 'product' => $this->products[$product]];
         }
-        return 0;
+        return [];
     }
 }
