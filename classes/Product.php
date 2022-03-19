@@ -1,25 +1,24 @@
 <?php
-
-class Product
+abstract class Product
 {
     private $name;
-    private $price;
-    private $sellingByKg;
 
-    public function __construct($name, $price, $sellingByKg)
+    public function __construct($price, $sellingByKg)
     {
-        $this->setName($name)->setPrice($price)->setSellingByKg($sellingByKg);
+        $this->setName(get_class($this))
+            ->setPrice($price)
+            ->setSellingByKg($sellingByKg);
     }
 
-    public function setName(string $name)
+    public function setName($name)
     {
-        $this->name = $name;
+        $this->name = lcfirst($name);
         return $this;
     }
 
     public function getName()
     {
-        return strtolower($this->name);
+        return $this->name;
     }
 
     public function setPrice(float $price)

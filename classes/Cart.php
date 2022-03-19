@@ -6,9 +6,6 @@ class Cart
     public function addToCart(array $array)
     {
         $this->cartItems[] = $array;
-
-        // With products name keys
-        // $this->cartItems[$array['product']->getName()] = $array;
     }
 
     public function printReceipt()
@@ -32,5 +29,10 @@ class Cart
             $finalPrice += $total;
         }
         echo "Final price amount: {$finalPrice} denars";
+    }
+
+    public function getCartData(): array
+    {
+        return [];
     }
 }
