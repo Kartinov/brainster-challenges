@@ -1,6 +1,5 @@
 <?php
 
-
 require_once __DIR__ . '/autoload.php';
 
 $orange   = new Orange(35, true);
@@ -17,14 +16,5 @@ $cart = new Cart();
 
 $cart->addToCart($market1->getItem('orange', 4));
 $cart->addToCart($market2->getItem('pepper', 6));
-$cart->addToCart($market1->getItem('almonds', 3));
 
 $cart->printReceipt();
-
-// echo '<pre>';
-// print_r($market1);
-// echo '</pre>';
-
-// echo '<pre>';
-// print_r($cart->cartItems);
-// echo '</pre>';

@@ -1,22 +1,26 @@
 <?php
+
 abstract class Product
 {
     private $name;
 
     public function __construct($price, $sellingByKg)
     {
-        $this->setName(get_class($this))
+        $this->setName()
             ->setPrice($price)
             ->setSellingByKg($sellingByKg);
     }
 
-    public function setName($name)
+    /**
+     * Name of the product is based on the ClassName file
+     */
+    public function setName()
     {
-        $this->name = lcfirst($name);
+        $this->name = lcfirst(get_class($this));
         return $this;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }

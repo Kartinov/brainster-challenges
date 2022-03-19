@@ -1,4 +1,5 @@
 <?php
+
 class MarketStall
 {
     private $products = [];
@@ -8,10 +9,11 @@ class MarketStall
         $this->addProductsToMarket($products);
     }
 
-    public function addProductsToMarket(array $products)
+    public function addProductsToMarket(array $products): void
     {
-        !$this->verifyMarketProducts($products) ?:
+        if ($this->verifyMarketProducts($products)) {
             $this->products = array_merge($this->products, $products);
+        }
     }
 
     private function verifyMarketProducts(array $array): bool
@@ -30,12 +32,8 @@ class MarketStall
 
     public function getItem(string $product, int $amount): array
     {
-        return
-            array_key_exists($product, $this->products) ?
-            [
-                'amount'  => $amount,
-                'product' => $this->products[$product]
-            ]
+        return array_key_exists($product, $this->products)
+            ? ['amount'  => $amount, 'product' => $this->products[$product]]
             : [];
     }
 }

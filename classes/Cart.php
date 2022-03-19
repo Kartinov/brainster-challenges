@@ -1,7 +1,8 @@
 <?php
+
 class Cart
 {
-    public $cartItems = [];
+    private $cartItems = [];
 
     public function addToCart(array $array)
     {
@@ -10,29 +11,48 @@ class Cart
 
     public function printReceipt()
     {
-        if (empty($this->cartItems)) {
+        $receipt = $this->getReceiptData();
+
+        if (!$receipt) {
             echo 'Your cart is empty';
             return 0;
         }
 
-        $finalPrice = 0;
-        for ($i = 0; $i < count($this->cartItems); $i++) {
-            $item   = $this->cartItems[$i];
-            $name   = ucfirst($item['product']->getName());
-            $amount = $item['amount'] . ' ' . $item['product']->sellingBy();
-            $total  = floatval($amount) * $item['product']->getPrice();
-
+        foreach ($receipt['receiptItems'] as $item) {
             echo "<div>
-                    {$name} | {$amount} | total = {$total} denars
-                  </div>";
-
-            $finalPrice += $total;
+                       {$item['productName']} | 
+                       {$item['amount']} | 
+                       total = {$item['toPay']} denars
+                   </div>";
         }
-        echo "Final price amount: {$finalPrice} denars";
+
+        echo "Final price amount: {$receipt['totalToPay']} denars";
     }
 
-    public function getCartData(): array
+    private function getReceiptData(): bool|array
     {
-        return [];
+        if (empty($this->cartItems)) return 0;
+
+        $receiptItems = [];
+        $total = 0;
+
+        foreach ($this->cartItems as $item) {
+            $toPay  = $item['amount'] * $item['product']->getPrice();
+
+            $receiptItems[] = [
+                'productName' => ucfirst($item['product']->getName()),
+                'amount'      => "{$item['amount']} {$item['product']->sellingBy()}",
+                'toPay'       => $toPay,
+            ];
+
+            $total += $toPay;
+        }
+
+        $receiptData = [
+            'receiptItems' => $receiptItems,
+            'totalToPay'   => $total
+        ];
+
+        return $receiptData;
     }
 }
