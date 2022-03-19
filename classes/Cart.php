@@ -2,11 +2,23 @@
 
 class Cart
 {
-    private $cartItems = [];
+    public $cartItems = [];
 
     public function addToCart(array $array)
     {
-        $this->cartItems[] = $array;
+        $this->cartItems[$array['product']->getName()] = $array;
+    }
+
+    public function removeItem(string $item) {
+        if (array_key_exists($item, $this->cartItems)) {
+            unset($this->cartItems[$item]);
+        } else {
+            echo "This {$item} does not exist in your cart.";
+        }
+    }
+
+    public function removeAll() {
+        $this->cartItems = [];
     }
 
     public function printReceipt()
