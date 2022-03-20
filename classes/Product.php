@@ -12,7 +12,7 @@ abstract class Product
     }
 
     /**
-     * Name of the product is based on the ClassName file
+     * Name of the product is based on the Class Name
      */
     public function setName()
     {

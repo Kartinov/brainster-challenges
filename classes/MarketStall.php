@@ -9,6 +9,11 @@ class MarketStall
         $this->addProductsToMarket($products);
     }
 
+    /**
+     * Adds product/s to Market
+     * @param array $products
+     * @return void
+     */
     public function addProductsToMarket(array $products): void
     {
         if ($this->verifyMarketProducts($products)) {
@@ -16,6 +21,11 @@ class MarketStall
         }
     }
 
+    /**
+     * Verifies array keys and values
+     * @param araay $array
+     * @return bool
+     */
     private function verifyMarketProducts(array $array): bool
     {
         foreach ($array as $key => $object) {
@@ -30,6 +40,11 @@ class MarketStall
         return 1;
     }
 
+    /**
+     * @param string $product
+     * @param int $amount
+     * @return array
+     */
     public function getItem(string $product, int $amount): array
     {
         return array_key_exists($product, $this->products)

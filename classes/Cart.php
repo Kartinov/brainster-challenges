@@ -9,7 +9,13 @@ class Cart
         $this->cartItems[$array['product']->getName()] = $array;
     }
 
-    public function removeItem(string $item) {
+    /**
+     * Removes already saved item in Cart
+     * @param string $item
+     * @return void
+     */
+    public function removeItem(string $item): void
+    {
         if (array_key_exists($item, $this->cartItems)) {
             unset($this->cartItems[$item]);
         } else {
@@ -17,33 +23,44 @@ class Cart
         }
     }
 
-    public function removeAll() {
+    /**
+     * Removes all saved items in Cart
+     * @return void
+     */
+    public function removeAll(): void
+    {
         $this->cartItems = [];
     }
 
-    public function printReceipt()
+    /**
+     * Prints saved Products in Cart
+     * @return void
+     */
+    public function printReceipt(): void
     {
         $receipt = $this->getReceiptData();
 
-        if (!$receipt) {
-            echo 'Your cart is empty';
-            return 0;
-        }
-
-        foreach ($receipt['receiptItems'] as $item) {
-            echo "<div>
+        if (!empty($receipt)) {
+            foreach ($receipt['receiptItems'] as $item) {
+                echo "<div>
                        {$item['productName']} | 
                        {$item['amount']} | 
                        total = {$item['toPay']} denars
                    </div>";
+            }
+            echo "Final price amount: {$receipt['totalToPay']} denars";
+        } else {
+            echo 'Your cart is empty';
         }
-
-        echo "Final price amount: {$receipt['totalToPay']} denars";
     }
 
-    private function getReceiptData(): bool|array
+    /**
+     * Receipt Data
+     * @return array
+     */
+    private function getReceiptData(): array
     {
-        if (empty($this->cartItems)) return 0;
+        if (empty($this->cartItems)) return [];
 
         $receiptItems = [];
         $total = 0;
