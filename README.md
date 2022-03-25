@@ -2,4 +2,4 @@
 - **Student:** Dimche Kartinov
 - **FullStack** Group 6
 ## Description
-- **Code purpose:** Dynamic website builder
+Dynamic website builder
