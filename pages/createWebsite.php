@@ -1,10 +1,10 @@
-<?php require_once __DIR__ . "/../includes/partials/header.php" ?>
+<?php require_once __DIR__ . "/../partials/header.php" ?>
 
-<div class="container-fluid bg-image pt-3 pb-5" style="background-image: url(<?= asset('img/bg-abstract-gray.jpg') ?>)">
+<div class="container-fluid bg-image min-vh-100 pt-3 pb-5" style="background-image: url(<?= asset('img/bg-abstract-gray.jpg') ?>)">
 
     <h1 class="text-center">You are one step away from your webpage</h1>
 
-    <form method="POST" action="" class="row justify-content-between">
+    <form method="POST" action="<?= route('storeWebsite') ?>" class="row justify-content-between">
 
         <!-- First form column -->
         <div class="col-4 p-3">
@@ -113,4 +113,4 @@
     </form>
 </div>
 
-<?php require_once __DIR__ . "/../includes/partials/footer.php" ?>
+<?php require_once __DIR__ . "/../partials/footer.php" ?>

@@ -1,5 +1,4 @@
 .bg-image {
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -7,4 +6,8 @@
 
 .last-mb-0 > *:last-child {
     margin-bottom: 0;
+}
+
+.hero-banner {
+    height: 400px;
 }

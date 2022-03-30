@@ -1,8 +1,8 @@
-<?php require_once __DIR__ . '/head_config.php' ?>
+<?php require_once __DIR__ . '/../config/head_config.php' ?>
 
 <title><?= $PAGE_TITLE ?></title>
 
-<?php if ($CURRENT_PAGE == "Index") : ?>
+<?php if ($CURRENT_PAGE == "home") : ?>
 
     <meta name="description" content="Website Builder" />
     <meta name="author" content="Dimche Kartinov" />
