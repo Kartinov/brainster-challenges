@@ -12,5 +12,5 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    die('Database connection error');
+    redirectTo(route('404'));
 }

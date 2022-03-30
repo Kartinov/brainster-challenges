@@ -6,7 +6,7 @@ $checkUrl = $_SERVER['REQUEST_SCHEME'] . '://' .
 switch ($checkUrl) {
     case route('form'):
         $CURRENT_PAGE = "Form";
-        $PAGE_TITLE = "Website Form";
+        $PAGE_TITLE = "Create website";
         break;
     default:
         $CURRENT_PAGE = "Index";
