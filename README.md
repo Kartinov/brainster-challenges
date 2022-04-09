@@ -7,6 +7,7 @@ Switch/Checkout between branches to see the challenges.
 
 ## Challenges
 
+- [ ] Challenge 17 - PHP
 - [x] Challenge 16 - PHP PDO
 - [x] Challenge 15 - PHP OOP
 - [x] Challenge 14 - PHP OOP
