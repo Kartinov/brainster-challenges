@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+
+body {
+    background-image: linear-gradient(
+        109.6deg,
+        rgb(212, 215, 218) 11.2%,
+        rgba(237, 246, 250, 1) 100.2%
+    );
+
+    font-family: 'Heebo', sans-serif;
+}
+
+.search-wrapper {
+    width: 750px;
+    border: none;
+    border-radius: 20px;
+}
+
+.form-control {
+    border-radius: 7px;
+    border: 1.5px solid #e3e6ed;
+    transition: letter-spacing 150ms ease-in;
+}
+
+input.form-control:focus {
+    border: 1.5px solid #e3e6ed;
+    background-color: #f7f8fd;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: #557dff !important;
+    border-radius: 7px;
+}
+
+.bg-primary {
+    background-color: #557dff !important;
+}
+
+.btn-primary:hover {
+    transform: scaleX(1.01);
+}
+
+.btn-primary:focus {
+    transform: scaleX(1.02);
+}
+
+.outline-none:focus {
+    box-shadow: none !important;
+}
+
+/* Login modal */
+
+.modal-dialog {
+    max-width: 400px;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}

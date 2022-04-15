@@ -1,5 +1,7 @@
 <?php
 
+use App\App;
+
 require_once __DIR__ . '/autoload.php';
 
-redirectTo(route('home'));
+App::redirectTo(App::route('home'));
