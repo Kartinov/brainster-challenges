@@ -2,11 +2,7 @@
 
 require_once __DIR__ . '/../interfaces/SessionInterface.php';
 
-namespace App\Session;
-
-use App\Interfaces\SessionInterface;
-
-class SessionHandler implements SessionInterface
+class Session implements SessionInterface
 {
     public static function init()
     {
@@ -25,6 +21,20 @@ class SessionHandler implements SessionInterface
 
         if (self::has($key)) {
             return $_SESSION[$key];
+        }
+
+        return null;
+    }
+
+    public static function getAndForget(string $key)
+    {
+        self::init();
+
+        if (self::has($key)) {
+            $value = $_SESSION[$key];
+            self::remove($key);
+
+            return $value;
         }
 
         return null;
@@ -50,9 +60,9 @@ class SessionHandler implements SessionInterface
         }
     }
 
-    public static function clear(): void
+    public static function destroy(): void
     {
-        session_unset();
+        session_destroy();
     }
 
     public static function has(string $key): bool

@@ -1,8 +1,7 @@
 <?php
 
-use App\App;
-
 require_once __DIR__ . '/../autoload.php';
+session_start();
 
 ?>
 
@@ -17,6 +16,9 @@ require_once __DIR__ . '/../autoload.php';
 
     <link rel="stylesheet" href="<?= App::asset('css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= App::asset('css/custom.css') ?>">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -36,7 +38,13 @@ require_once __DIR__ . '/../autoload.php';
                     <h1 class="display-4">Vehicle Registration</h1>
                     <p class="lead">Enter your registration number to check its validity</p>
                 </label>
+                <?php
 
+                echo '<pre>';
+                var_dump($_SESSION);
+                echo '</pre>';
+
+                ?>
                 <div class="input-group shadow">
                     <input type="text" class="form-control p-4 outline-none" placeholder="Registration number" id="reg_num" name="reg_num" autocomplete="off">
                     <div class="input-group-append">
@@ -49,14 +57,18 @@ require_once __DIR__ . '/../autoload.php';
         <!-- Login Modal -->
         <?php require_once __DIR__ . '/components/loginModal.php' ?>
 
-
         <script src="<?= App::asset('js/jquery-3.6.0.min.js') ?>"></script>
         <script src="<?= App::asset('js/popper.min.js') ?>"></script>
         <script src="<?= App::asset('js/bootstrap.min.js') ?>"></script>
 
         <script>
-            // $('#loginModal').modal('show')
+            <?php if (Session::has('message')) : ?>
+                $('#loginModal').modal('show')
+            <?php Session::remove('message');
+            endif ?>
         </script>
+
+
 </body>
 
 </html>

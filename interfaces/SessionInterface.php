@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Interfaces;
-
 interface SessionInterface
 {
     /**
@@ -18,7 +16,7 @@ interface SessionInterface
 
     public static function remove(string $key): void;
 
-    public static function clear(): void;
+    public static function destroy(): void;
 
     public static function has(string $key): bool;
 }

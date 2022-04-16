@@ -1,7 +1,4 @@
 <?php
-
-namespace App;
-
 class App
 {
     /**
@@ -15,7 +12,9 @@ class App
         $appPath = trim(APP_PATH, "/") . "/";
 
         $routes = [
-            'home' => $appPath . 'pages/home.php',
+            'home'        => $appPath . 'pages/home.php',
+            'admin_panel' => $appPath . 'pages/admin_panel.php',
+            'login'       => $appPath . 'actions/login.php',
         ];
 
         return str_replace("{ID}", $id, $routes[$route]) ?? "";
@@ -58,5 +57,9 @@ class App
         if ($_SERVER['REQUEST_METHOD'] != 'POST') {
             self::redirectTo(self::route('home'));
         }
+    }
+
+    public static function login()
+    {
     }
 }

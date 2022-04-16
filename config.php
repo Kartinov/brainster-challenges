@@ -9,7 +9,7 @@ define("APP_PATH", "http://localhost/Brainster/Classroom/GitLab_BrainsterChallen
 /**
  * Database Credentials
  */
-define("HOSTNAME", "");
-define("DB_NAME", "");
-define("DB_USERNAME", "");
+define("HOSTNAME", "localhost");
+define("DB_NAME", "vehicle_registration_system");
+define("DB_USERNAME", "root");
 define("DB_PASSWORD", "");
