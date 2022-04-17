@@ -4,3 +4,10 @@
 
 ## Description
 An application for managing registered vehicles
+
+## Setup
+
+- Create database
+- Import database located in `mysql` folder
+- Fill the constants in config.php
+- Explore the APP

@@ -11,7 +11,7 @@ body {
 }
 
 .search-wrapper {
-    width: 750px;
+    width: 100%;
     border: none;
     border-radius: 20px;
 }
@@ -57,4 +57,9 @@ input.form-control:focus {
 
 .modal-body {
     padding: 1.5rem;
+}
+
+th,
+tr {
+    white-space: nowrap !important;
 }

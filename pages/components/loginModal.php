@@ -10,9 +10,9 @@
                 </div>
                 <div class="modal-body">
 
-                    <?php if (Session::has('message')) : ?>
+                    <?php if (Session::has('login-message')) : ?>
                         <div class="alert alert-danger small">
-                            <?= Session::get('message') ?>
+                            <?= Session::get('login-message') ?>
                         </div>
                     <?php endif ?>
 

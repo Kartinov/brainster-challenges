@@ -1,74 +1,87 @@
 <?php
 
-require_once __DIR__ . '/../autoload.php';
-session_start();
+require_once __DIR__ . '/components/header.php';
+require_once __DIR__ . '/../classes/Registration.php';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="container d-flex justify-content-center">
+    <div class="search-wrapper bg-light mt-4 p-5">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+        <!-- Form -->
+        <form action="<?= App::route('registration.search') ?>" method="POST">
+            <label for="registration_search" class="d-block text-center mb-3">
+                <h1 class="display-4">Vehicle Registration</h1>
+                <p class="lead">Enter your registration number to check its validity</p>
+            </label>
 
-    <link rel="stylesheet" href="<?= App::asset('css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= App::asset('css/custom.css') ?>">
+            <div class="w-75 mx-auto">
+                <?php Session::printAlertMessage() ?>
+            </div>
 
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
-
-<body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="<?= App::route('home') ?>">Vehicle Registration</a>
-        <button type="button" class="btn btn-primary outline-none" data-toggle="modal" data-target="#loginModal">
-            Login
-        </button>
-    </nav>
-
-    <div class="container d-flex justify-content-center">
-        <div class="search-wrapper bg-light mt-4 p-5">
-
-            <!-- Form -->
-            <form action="" method="POST">
-                <label for="reg_num" class="d-block text-center mb-3">
-                    <h1 class="display-4">Vehicle Registration</h1>
-                    <p class="lead">Enter your registration number to check its validity</p>
-                </label>
-                <?php
-
-                echo '<pre>';
-                var_dump($_SESSION);
-                echo '</pre>';
-
-                ?>
-                <div class="input-group shadow">
-                    <input type="text" class="form-control p-4 outline-none" placeholder="Registration number" id="reg_num" name="reg_num" autocomplete="off">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary outline-none">Search</button>
-                    </div>
+            <div class="input-group shadow w-75 mx-auto">
+                <input type="text" class="form-control p-4 outline-none" placeholder="Registration number" id="registration_search" name="registration_search" autocomplete="off">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary outline-none">Search</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
 
-        <!-- Login Modal -->
-        <?php require_once __DIR__ . '/components/loginModal.php' ?>
+        <?php if (Session::has('searchedRegistration')) : ?>
 
-        <script src="<?= App::asset('js/jquery-3.6.0.min.js') ?>"></script>
-        <script src="<?= App::asset('js/popper.min.js') ?>"></script>
-        <script src="<?= App::asset('js/bootstrap.min.js') ?>"></script>
+            <?php $registration = (Session::getAndForget('searchedRegistration'))[0]; ?>
 
-        <script>
-            <?php if (Session::has('message')) : ?>
-                $('#loginModal').modal('show')
-            <?php Session::remove('message');
-            endif ?>
-        </script>
+            <div class="col-12 mt-4">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Model</th>
+                                <th>Type</th>
+                                <th>Chassis number</th>
+                                <th>Production year</th>
+                                <th>Registration number</th>
+                                <th>Fuel type</th>
+                                <th>Registration to</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="<?= (new Registration)->registrationExpirationColor($registration) ?>">
+                                <td><?= $registration->id ?></td>
+                                <td><?= $registration->vm_name ?></td>
+                                <td><?= $registration->vt_name ?></td>
+                                <td><?= $registration->vehicle_chassis_number ?>
+                                </td>
+                                <td><?= date('Y', strtotime($registration->vehicle_production_year)) ?>
+                                </td>
+                                <td><?= $registration->registration_number ?></td>
+                                <td><?= $registration->ft_name ?></td>
+                                <td><?= $registration->registration_expired_at ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        <?php endif ?>
+    </div>
 
 
-</body>
+    <!-- Login Modal -->
+    <?php require_once __DIR__ . '/components/loginModal.php' ?>
 
-</html>
+    <script src="<?= App::asset('js/jquery-3.6.0.min.js') ?>"></script>
+    <script src="<?= App::asset('js/popper.min.js') ?>"></script>
+    <script src="<?= App::asset('js/bootstrap.min.js') ?>"></script>
+
+    <script>
+        <?php if (Session::has('login-message')) : ?>
+            $('#loginModal').modal('show')
+        <?php Session::remove('login-message');
+        endif ?>
+    </script>
+
+    <?php require_once __DIR__ . '/components/footer.php' ?>

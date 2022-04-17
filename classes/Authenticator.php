@@ -8,14 +8,14 @@ class Authenticator
     public function login($username, $password)
     {
         if (!(new User)->where(['username' => $username])->exists()) {
-            Session::set('message', 'Either your username or password is incorrect');
+            Session::set('login-message', 'Either your username or password is incorrect');
             return false;
         }
 
         $user = (new User)->where(['username' => $username])->first();
 
         if (!password_verify($password, $user->password)) {
-            Session::set('message', 'Either your username or password is incorrect');
+            Session::set('login-message', 'Either your username or password is incorrect');
             return false;
         }
 

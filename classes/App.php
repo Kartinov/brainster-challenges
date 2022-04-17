@@ -12,9 +12,24 @@ class App
         $appPath = trim(APP_PATH, "/") . "/";
 
         $routes = [
+
+            // Pages
             'home'        => $appPath . 'pages/home.php',
             'admin_panel' => $appPath . 'pages/admin_panel.php',
-            'login'       => $appPath . 'actions/login.php',
+
+            // Auth
+            'login'  => $appPath . 'actions/login.php',
+            'logout' => $appPath . 'actions/logout.php',
+
+            // Registration CRUD
+            'registration.store'  => $appPath . 'actions/registration_store.php',
+            'registration.delete' => $appPath . 'actions/registration_delete.php?id={ID}',
+            'registration.update' => $appPath . 'actions/registration_update.php',
+            'registration.edit'   => $appPath . 'actions/registration_edit.php?id={ID}',
+            'registration.extend' => $appPath . 'actions/registration_extend.php?id={ID}',
+            'registration.search' => $appPath . 'actions/registration_search.php',
+
+            'cancel.edit' => $appPath . 'actions/registration_cancel.php',
         ];
 
         return str_replace("{ID}", $id, $routes[$route]) ?? "";
@@ -57,9 +72,5 @@ class App
         if ($_SERVER['REQUEST_METHOD'] != 'POST') {
             self::redirectTo(self::route('home'));
         }
-    }
-
-    public static function login()
-    {
     }
 }
