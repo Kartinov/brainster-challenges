@@ -30,3 +30,17 @@ function isEven(number) {
 const givenNumber = 4
 
 isEvenAndConsoleMessage(givenNumber)
+
+// ====== Task 2 ======
+
+let expectedNumbers = []
+
+for (let i = 10; i <= 100; i++) {
+    if (isEven(i) && i % 3 === 0) {
+        expectedNumbers.push(i)
+    }
+}
+
+console.log(expectedNumbers)
+
+// ====== Task 3 ======
