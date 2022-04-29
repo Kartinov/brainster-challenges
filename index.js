@@ -1,10 +1,5 @@
 // Functions
 
-/**
- * Only whole numbers e.g. [1, 5, 10, 25, 50]
- *
- * @param {integer} number
- */
 function isEvenAndConsoleMessage(number) {
     if (!Number.isInteger(number)) {
         return console.log(`${number} is not a whole number.`)
@@ -17,12 +12,23 @@ function isEvenAndConsoleMessage(number) {
     return console.log(`The number ${number} is not even`)
 }
 
-/**
- *
- * @param {number} number
- */
 function isEven(number) {
     return number % 2 === 0 ? true : false
+}
+
+function isPrimeNumber(number) {
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) return false
+    }
+    return number > 1
+}
+
+function isPrimeMessage(number) {
+    if (isPrimeNumber(number)) {
+        return 'is prime'
+    }
+
+    return 'is not prime'
 }
 
 // ====== Task 1 ======
@@ -44,3 +50,22 @@ for (let i = 10; i <= 100; i++) {
 console.log(expectedNumbers)
 
 // ====== Task 3 ======
+
+const numbers = [13, 15, 20]
+
+let smallest = (largest = numbers[0])
+
+numbers.forEach(number => {
+    if (number > largest) {
+        largest = number
+    } else if (number < smallest) {
+        smallest = number
+    }
+})
+
+console.log('numbers', numbers)
+console.log('smallest', smallest)
+console.log('largest', largest)
+
+console.log(`The smallest number ${smallest} ${isPrimeMessage(smallest)}`)
+console.log(`The largest number ${largest} ${isPrimeMessage(largest)}`)
