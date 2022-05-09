@@ -1,6 +1,5 @@
 import { books } from './books.js';
 import * as func from './functions.js';
-import * as handler from './handlers.js';
 
 window.addEventListener('load', () => {
     func.renderBooks(books);
@@ -12,5 +11,5 @@ window.addEventListener('load', () => {
     // Handling form
     const form = document.getElementById('formAddBook');
 
-    form.addEventListener('submit', handler.addBook);
+    form.addEventListener('submit', func.handlerAddBook);
 });
