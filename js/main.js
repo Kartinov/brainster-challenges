@@ -1,8 +1,16 @@
 import { books } from './books.js';
 import * as func from './functions.js';
+import * as handler from './handlers.js';
 
 window.addEventListener('load', () => {
-    func.listBooks(books); // list books in HTML DOM
+    func.renderBooks(books);
 
-    func.listBooksActivity(books); // list books with activity message
+    func.renderBooksActivity(books);
+
+    func.renderTableWithBooks(books);
+
+    // Handling form
+    const form = document.getElementById('formAddBook');
+
+    form.addEventListener('submit', handler.addBook);
 });

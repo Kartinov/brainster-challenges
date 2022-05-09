@@ -8,3 +8,79 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+.container > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+/* Table styles */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 10px 20px;
+}
+
+/* Progress Bar */
+
+.td-progress {
+    padding: 0;
+}
+
+.progress {
+    background-color: #e2e2e2;
+}
+
+.progress .progress-inner {
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #00e900;
+    color: #fff;
+    text-align: center;
+}
+
+/* Form styles */
+
+#formAddBook {
+    padding: 10px;
+    background-color: rgb(219, 219, 219);
+}
+
+#formAddBook input {
+    border: none;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(179, 179, 179);
+    display: inline-block;
+}
+
+#formAddBook button {
+    border: none;
+    background-color: #5656ff;
+    padding: 10px 7px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#formAddBook input,
+#formAddBook button {
+    margin-top: 10px;
+}
+
+#formAddBook button:hover {
+    background-color: #4646ff;
+}
+
+/* error messages */
+#errorMessages {
+    padding: 10px;
+    color: red;
+}

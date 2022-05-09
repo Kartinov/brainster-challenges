@@ -12,8 +12,32 @@
     </head>
     <body>
         <main class="container">
+            <!-- List of books with their Authors -->
             <ul id="books"></ul>
+
+            <!-- Books with activity message-->
             <ul id="booksActivity"></ul>
+
+            <!-- Table container -->
+            <div id="tableContainer"></div>
+
+            <!-- Form Add Book -->
+            <form id="formAddBook">
+                <input type="text" id="title" placeholder="Book Title" />
+                <input type="text" id="author" placeholder="Book Author" />
+                <input
+                    type="number"
+                    id="onPage"
+                    placeholder="Current Page On..."
+                />
+                <input
+                    type="number"
+                    id="maxPages"
+                    placeholder="Book Max Pages"
+                />
+                <button>Add to list</button>
+                <div id="errorMessages"></div>
+            </form>
         </main>
         <script type="module" src="./js/main.js"></script>
     </body>
