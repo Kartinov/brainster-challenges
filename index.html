@@ -22,10 +22,28 @@
         <link rel="stylesheet" href="./css/main.css" />
     </head>
     <body>
-        <h1 class="animate__animated animate__bounce">Test</h1>
+        <main id="main">
+            <!-- Spinner -->
+            <div
+                class="min-vh-100 d-flex justify-content-center align-items-center"
+                id="loader"
+            >
+                <div class="h1 px-2 animate__flash">Loading Quiz...</div>
+            </div>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="jumbotron text-center">
+                <h1 class="display-4">Welcome to Brainster's Trivia!</h1>
+                <p class="lead">Click on the start button to begin.</p>
+                <hr class="my-4" />
+                <button class="btn btn-success btn-lg">Start</button>
+            </div>
+        </main>
 
         <!-- jQuery 3.6.0 CDN Script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- Main JS -->
         <script src="./js/main.js"></script>
     </body>
 </html>
