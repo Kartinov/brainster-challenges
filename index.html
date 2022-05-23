@@ -1,49 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Quiz</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-        <!-- Bootstrap 4.6.1 CDN Link -->
+        <!-- Latest compiled and minified Bootstrap 4.6.1 CSS -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         />
 
-        <!-- Animate 4.6.1 CDN Link -->
+        <!-- Animate css link -->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
 
-        <!-- Main CSS -->
-        <link rel="stylesheet" href="./css/main.css" />
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="./main.css" />
     </head>
     <body>
-        <main id="main">
-            <!-- Spinner -->
+        <main class="container pb-5">
+            <!-- loading-screen -->
             <div
+                id="loading-screen"
                 class="min-vh-100 d-flex justify-content-center align-items-center"
-                id="loader"
             >
-                <div class="h1 px-2 animate__flash">Loading Quiz...</div>
+                <h1 class="animate__animated animate__pulse">Loading...</h1>
             </div>
 
-            <!-- Start Screen -->
-            <div id="start-screen" class="jumbotron text-center">
-                <h1 class="display-4">Welcome to Brainster's Trivia!</h1>
-                <p class="lead">Click on the start button to begin.</p>
+            <!-- start screen -->
+            <div
+                id="start-screen"
+                class="animate__animated animate__fadeIn jumbotron text-center"
+            >
+                <div id="welcome-text">
+                    <h1 class="display-4">Welcome to Brainster's Trivia!</h1>
+                    <p class="lead">Click on the start button to begin.</p>
+                </div>
+
+                <div id="ingame-text" class="d-none">
+                    <h1 class="display-4">Good Luck!</h1>
+                    <p class="lead">Click on the button to start over</p>
+                </div>
+
+                <div id="finish-text" class="d-none">
+                    <h1 class="display-4">Let's see your score!</h1>
+                    <p class="lead">Click on the button to start again</p>
+                </div>
+
                 <hr class="my-4" />
-                <button class="btn btn-success btn-lg">Start</button>
+
+                <button id="start-quiz-btn" class="btn btn-success btn-lg">
+                    Start
+                </button>
+
+                <button
+                    id="restart-quiz-btn"
+                    class="animate__animated animate__fadeIn btn btn-warning btn-lg hide"
+                >
+                    Start Over
+                </button>
+            </div>
+
+            <div id="ingame-wrapper" class="d-none">
+                <!-- question and answers wrapper -->
+                <div
+                    id="questions"
+                    class="animate__animated animate__fadeIn w-75 m-auto text-center border border-secondary shadow"
+                ></div>
+
+                <!-- progress -->
+                <div
+                    id="progress"
+                    class="animate__animated animate__fadeIn jumbotron text-center mt-5 h2"
+                ></div>
             </div>
         </main>
 
-        <!-- jQuery 3.6.0 CDN Script -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-        <!-- Main JS -->
-        <script src="./js/main.js"></script>
+        <script src="./main.js"></script>
     </body>
 </html>
