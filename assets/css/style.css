@@ -1,0 +1,56 @@
+body {
+    background-color: #242021;
+}
+
+h1,
+h2,
+h3 {
+    color: #a2a2a2;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+#race-track {
+    background-image: url('../img/raceTrack.jpg');
+    height: 500px;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: relative;
+}
+
+.car-line {
+    position: relative;
+    height: 250px;
+}
+
+img.car {
+    position: absolute;
+    height: 250px;
+    left: 0;
+}
+
+.text-white {
+    color: #ffebf7;
+}
+
+.text-danger {
+    color: #ba0000;
+}
+
+/*use these below*/
+/*car1 color*/
+/*color: #ffebf7;*/
+
+/*car2 color*/
+/*color: #ba0000;*/
