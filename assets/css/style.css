@@ -20,6 +20,10 @@ h3 {
     font-size: 25px;
 }
 
+.hidden {
+    display: none;
+}
+
 #race-track {
     background-image: url('../img/raceTrack.jpg');
     height: 500px;
@@ -29,7 +33,11 @@ h3 {
     position: relative;
 }
 
-.car-line {
+#cars-wrapper {
+    display: none;
+}
+
+.track-line {
     position: relative;
     height: 250px;
 }
@@ -37,7 +45,7 @@ h3 {
 img.car {
     position: absolute;
     height: 250px;
-    left: 0;
+    left: 0px;
 }
 
 .text-white {
@@ -48,9 +56,77 @@ img.car {
     color: #ba0000;
 }
 
-/*use these below*/
-/*car1 color*/
-/*color: #ffebf7;*/
+#track-center-div {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-/*car2 color*/
-/*color: #ba0000;*/
+#race-start-counter {
+    color: #fff;
+    font-size: 7rem;
+    display: none;
+}
+
+#race-finish-flag {
+    display: none;
+}
+
+#darken-track {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+#previous-race-results {
+    display: none;
+}
+
+#previous-race-results .result {
+    padding: 0 1rem;
+}
+
+#previous-race-results .result .inner {
+    border-radius: 0;
+}
+
+#previous-race-results > h2 {
+    margin-bottom: 10%;
+}
+
+#current-race-results {
+    min-height: 100px;
+}
+
+.result {
+    padding: 1rem;
+}
+
+.result .inner {
+    border: 2px solid #ffebf7;
+    color: #a2a2a2;
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.result .inner p {
+    margin-bottom: 0;
+}
+
+.result span {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.result-1 span {
+    color: #fff;
+}
+
+.result-2 span {
+    color: #dc3545;
+}

@@ -33,7 +33,7 @@
                 <!-- start race button -->
                 <button
                     type="button"
-                    id="start-race"
+                    id="start-race-btn"
                     class="btn btn-outline-light btn-lg px-5"
                 >
                     Race!
@@ -42,7 +42,7 @@
                 <!-- start over button -->
                 <button
                     type="button"
-                    id="start-over"
+                    id="start-over-btn"
                     class="btn btn-outline-light btn-lg px-5"
                 >
                     Start Over
@@ -50,35 +50,58 @@
             </div>
         </header>
 
-        <main>
-            <!-- Race track -->
+        <main class="pb-5">
+            <!-- race track -->
             <div id="race-track" class="mb-3">
-                <!-- Car 1 -->
-                <div class="car-line">
-                    <img id="car-1" class="car" src="./assets/img/car1.gif" />
+                <!-- used to darken the track -->
+                <div id="darken-track"></div>
+
+                <div id="cars-wrapper">
+                    <!-- car 1 -->
+                    <div class="track-line">
+                        <img
+                            id="car-1"
+                            class="car"
+                            src="./assets/img/car1.gif"
+                            data-car="1"
+                        />
+                    </div>
+
+                    <!-- car 2 -->
+                    <div class="track-line">
+                        <img
+                            id="car-2"
+                            class="car"
+                            src="./assets/img/car2.gif"
+                            data-car="2"
+                        />
+                    </div>
                 </div>
 
-                <!-- Car 2 -->
-                <div class="car-line">
-                    <img id="car-2" class="car" src="./assets/img/car2.gif" />
+                <!-- track center div - counter/flag -->
+                <div id="track-center-div">
+                    <div id="race-start-counter"></div>
+                    <div id="race-finish-flag">
+                        <img src="./assets/img/finish.gif" />
+                    </div>
                 </div>
             </div>
 
-            <!-- Results -->
+            <!-- results -->
             <div class="container-fluid">
                 <div class="row">
-                    <!-- current race results -->
-                    <div class="col-5">
+                    <div class="col-6">
                         <h2 class="h3 text-center mb-3">Results</h2>
                         <div class="row">
-                            <div id="car-1-results" class="col-6">
+                            <div class="col-6">
                                 <h3
                                     class="h4 text-white text-center font-weight-bold"
                                 >
                                     Car 1
                                 </h3>
                             </div>
-                            <div id="car-2-results" class="col-6">
+
+                            <div class="col-6">
                                 <h3
                                     class="h4 text-danger text-center font-weight-bold"
                                 >
@@ -86,11 +109,13 @@
                                 </h3>
                             </div>
                         </div>
+
+                        <div id="current-race-results"></div>
                     </div>
 
                     <!-- previous race results -->
-                    <div id="previous-race-results" class="col-7">
-                        <h2 class="h3 text-center mb-3">
+                    <div id="previous-race-results" class="col-6">
+                        <h2 class="h4 text-center">
                             Results from the previous time you played this game:
                         </h2>
                     </div>
@@ -104,6 +129,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 
-        <script src="./assets/js/app.js"></script>
+        <script type="module" src="./assets/js/app.js"></script>
     </body>
 </html>
