@@ -7,7 +7,7 @@ Switch/Checkout between branches to see the challenges.
 
 ## Challenges
 
--   [ ] Challenge 21 - jQuery - Racing Cars
+-   [x] Challenge 21 - jQuery - Racing Cars
 -   [x] Challenge 20 - JavaScript - Quiz
 -   [x] Challenge 19 - JavaScript
 -   [x] Challenge 18 - JavaScript
