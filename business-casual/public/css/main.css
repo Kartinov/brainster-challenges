@@ -11,6 +11,7 @@
         ),
         url("../images/textures/cafee-beans.jpg");
     background-repeat: repeat;
+    min-height: 100vh;
 }
 
 /* Logo */
