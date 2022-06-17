@@ -25,7 +25,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        return Session::has('user')
+            ? redirect()->route('clients.show')
+            : view('clients.create');
     }
 
     /**
