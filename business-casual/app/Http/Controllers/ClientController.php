@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\CreateClientFormRequest;
 
 class ClientController extends Controller
 {
@@ -13,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**
@@ -32,53 +34,31 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateClientFormRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Session::put('user', $validated);
+
+        return redirect()->route('clients.show');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return Session::missing('user')
+            ? redirect()->route('clients.create')
+            : view('clients.show');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function logout()
     {
-        //
-    }
+        Session::flush();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('home');
     }
 }

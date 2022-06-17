@@ -44,22 +44,44 @@
             <div class="container py-5">
                 <div class="row">
                     <div class="col-12 col-md-8 mx-auto">
-                        <form class="text-white">
+                        <form action="{{ route('clients.store') }}" method="POST" class="text-white">
+                            @csrf
                             <div class="form-group">
+                                @if ($errors->has('firstname'))
+                                    <div class="alert alert-danger mb-2">
+                                        {{ $errors->first('firstname') }}
+                                    </div>
+                                @endif
+
                                 <label for="firstname">Firstname</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname">
+                                <input type="text" class="form-control" id="firstname" name="firstname"
+                                    value="{{ old('firstname') }}">
                             </div>
                             <div class="form-group">
+                                @if ($errors->has('lastname'))
+                                    <div class="alert alert-danger mb-2">
+                                        {{ $errors->first('lastname') }}
+                                    </div>
+                                @endif
+
                                 <label for="lastname">Lastname</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname">
+                                <input type="text" class="form-control" id="lastname" name="lastname"
+                                    value="{{ old('lastname') }}">
                             </div>
 
                             <div class="form-group">
+                                @if ($errors->has('email'))
+                                    <div class="alert alert-danger mb-2">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                @endif
+
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email">
+                                <input type="text" class="form-control" id="email" name="email"
+                                    value="{{ old('email') }}">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="submit" class="btn btn-primary btn-block">Create</button>
                         </form>
                     </div>
                 </div>

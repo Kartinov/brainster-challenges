@@ -29,12 +29,11 @@
             {{-- Navbar --}}
             <nav class="navbar navbar-expand-sm navbar-dark justify-content-center text-center">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
-
                     @if (Session::has('user'))
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{ route('clients.show') }}">Profile</a>
                         </li>
                         <li class="nav-item">
@@ -45,54 +44,28 @@
                             <a class="nav-link" href="{{ route('clients.create') }}">Log In</a>
                         </li>
                     @endif
-
                 </ul>
             </nav>
         </header>
 
-        <main class="pb-5">
-            {{-- Hero Section --}}
-            <section class="container py-5">
+        <main>
+            <div class="container py-5">
                 <div class="row">
-                    <div class="col-12 position-relative">
-                        <div class="image-wrapper w-75 ml-auto">
-                            <img src="{{ asset('images/cafee-store.jpg') }}" class="img-fluid rounded">
-                        </div>
-                        <div class="pop-up text-box text-center rounded p-3">
-                            <h3 class="text-uppercase h6">lorem ipsum</h3>
-                            <h2 class="text-uppercase h4 mb-3">lorem ipsum</h2>
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptas,
-                                error aperiam
-                                voluptate non culpa magnam praesentium consectetur velit ipsa?</p>
-                            <a href="#" class="btn">Visit us today</a>
-                        </div>
+                    <div class="col text-white">
+                        <p>
+                            Your firstname is: {{ Session::get('user.firstname') }}
+                        </p>
+
+                        <p>
+                            Your lastname is: {{ Session::get('user.lastname') }}
+                        </p>
+
+                        @if (Session::has('user.email'))
+                            <p>Your email is: {{ Session::get('user.email') }}</p>
+                        @endif
                     </div>
                 </div>
-            </section>
-
-            {{-- Our offer section --}}
-            <section id="our-offer">
-                <div class="container py-5">
-                    <div class="row">
-                        <div class="col">
-                            <div class="offer-box text-box text-center p-4">
-                                <h3 class="text-uppercase h6">our promise</h3>
-                                <h2 class="text-uppercase h3 mb-3">
-                                    to 
-                                    {{ Session::has('user') ? Session::get('user.firstname') . ' ' . Session::get('user.lastname') : 'you' }}
-
-                                </h2>
-                                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                                    ratione praesentium perferendis nihil nemo. Harum, ad eum! Possimus ipsa modi atque
-                                    et non maiores dolor soluta, eos harum, odit similique nam assumenda blanditiis
-                                    rerum debitis magnam? Ipsum dignissimos deleniti non tempora voluptates minima,
-                                    ducimus labore odio exercitationem fugit sunt unde dolorem perferendis omnis, vero
-                                    eum, vitae rem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </main>
         {{-- Footer --}}
         <footer class="py-3">

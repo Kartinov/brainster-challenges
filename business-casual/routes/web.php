@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [ClientController::class, 'index'])->name('home');
+
+Route::get('clients', fn () =>  redirect()->route('home'));
+
+Route::post('clients', [ClientController::class, 'store'])->name('clients.store');
+
+Route::get('clients/show', [ClientController::class, 'show'])->name('clients.show');
 
 Route::get('clients/create', [ClientController::class, 'create'])->name('clients.create');
+
+Route::get('clients/logout', [ClientController::class, 'logout'])->name('clients.logout');
