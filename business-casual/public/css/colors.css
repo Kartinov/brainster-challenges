@@ -1,5 +1,7 @@
 :root {
     /* colors */
+    --white-opacity: rgba(255, 255, 255, 0.836);
+
     --dark-brown: #441f14;
     --dark-brown-opacity: #441f1493;
     --orange: #ffa600;

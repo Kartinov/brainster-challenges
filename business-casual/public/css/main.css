@@ -11,7 +11,6 @@
         ),
         url("../images/textures/cafee-beans.jpg");
     background-repeat: repeat;
-    height: 100vh;
 }
 
 /* Logo */
@@ -22,12 +21,6 @@
     font-size: 3rem;
     padding-left: 15px;
     padding-right: 15px;
-}
-
-@media (min-width: 480px) {
-    #logo {
-        font-size: 4.2rem;
-    }
 }
 
 /* Navbar */
@@ -52,4 +45,59 @@
 
 .shadow-text {
     text-shadow: 2px 2px 4px #000000;
+}
+
+.text-box {
+    background-color: var(--white-opacity);
+}
+
+.pop-up .btn {
+    background-color: var(--orange);
+    color: #fff;
+    margin-bottom: -50px;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.pop-up .btn:hover {
+    background-color: var(--white-opacity);
+    border: 2px solid var(--orange);
+    color: #000;
+}
+
+.image-wrapper {
+    display: none;
+}
+
+#our-offer {
+    background-color: var(--orange);
+}
+
+.offer-box {
+    outline: 2px solid var(--white-opacity);
+    outline-offset: 3px;
+}
+
+footer {
+    background-color: var(--dark-brown);
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .image-wrapper {
+        display: block;
+    }
+
+    .pop-up {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 400px;
+    }
+}
+
+@media (min-width: 480px) {
+    #logo {
+        font-size: 4.2rem;
+    }
 }
