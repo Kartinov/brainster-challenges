@@ -1,0 +1,18 @@
+.bg-cover {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.text-light-gray {
+    color: rgb(185, 185, 185);
+}
