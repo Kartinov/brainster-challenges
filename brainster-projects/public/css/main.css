@@ -1,0 +1,60 @@
+/* Mobile first design */
+/* No media query for (xs) since this is the default */
+
+.navbar-brand {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-nav .nav-item br {
+    display: none;
+}
+
+.header-cover-image {
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /*  */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /*  */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .navbar-brand {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item br {
+        display: block;
+    }
+
+    .navbar-nav .nav-item:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

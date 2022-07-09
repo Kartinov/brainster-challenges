@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',         [PageController::class, 'home'])->name('home');
+Route::get('/login',    [PageController::class, 'login'])->name('login');
+
+Route::resource('projects', ProjectController::class);

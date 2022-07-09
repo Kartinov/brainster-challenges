@@ -1,10 +1,7 @@
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Dimche Kartinov">
+  {{-- Favicon --}}
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
-  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-  <!-- Bootstrap CSS v4.6.1 -->
+  {{-- Bootstrap CSS v4.6.1 --}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
       integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
@@ -13,4 +10,5 @@
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Brainster Labs - @yield('title')</title>
+  {{-- Custom Styles --}}
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
