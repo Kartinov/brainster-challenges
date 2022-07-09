@@ -17,7 +17,7 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'image' => "https://picsum.photos/400/300?grayscale",
+            'image' => "https://picsum.photos/id/4/400/300",
             'name' => $this->faker->company(),
             'subtitle' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(3),
