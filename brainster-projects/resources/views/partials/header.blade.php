@@ -13,19 +13,26 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Академја за<br> Програмирање</a>
+                        <a class="nav-link" href="https://brainster.co/full-stack/" target="_blank">
+                            Академја за<br>Програмирање</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Академја за<br> Маркетиинг</a>
+                        <a class="nav-link" href="https://brainster.co/marketing/" target="_blank">
+                            Академја за<br>Маркетиинг</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Академја за<br> Дизајн</a>
+                        <a class="nav-link" href="https://brainster.co/graphic-design/" target="_blank">
+                            Академја за<br>Дизајн</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Блог</a>
+                        <a class="nav-link" href="https://blog.brainster.co/">
+                            Блог
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Вработи наши<br> студенти</a>
+                        <a class="nav-link" href="#">
+                            Вработи наши<br> студенти
+                        </a>
                     </li>
                 </ul>
             </div>
