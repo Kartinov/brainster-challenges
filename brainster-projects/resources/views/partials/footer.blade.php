@@ -4,7 +4,7 @@
     <img class="inline-block mb-3 mb-sm-0" src="{{ asset('img/Logo.svg') }}" alt="Brainster Footer Logo">
 
     <div class="d-flex">
-        <a href="#" class="nav-link text-success">- Say Hi! -</a>
+        <a href="https://www.facebook.com/brainster.co" class="nav-link text-success" target="_blank">- Say Hi! -</a>
         <a href="#" class="nav-link text-dark">Terms</a>
     </div>
 </footer>

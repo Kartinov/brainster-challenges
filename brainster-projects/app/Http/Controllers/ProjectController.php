@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -14,6 +15,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        if (!Auth::check()) return to_route('auth.login');
+
+        $projects = Project::all();
+
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -23,7 +29,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**

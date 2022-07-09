@@ -5,3 +5,5 @@
   <title>Brainster Labs - @yield('title')</title>
 
   @include('partials.link')
+
+  @yield('style')
