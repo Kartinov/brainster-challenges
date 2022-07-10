@@ -19,3 +19,11 @@
         @endforeach
     </div>
 @endsection
+
+@section('script')
+    <script>
+        @if ($errors->any() || session()->has('success_email'))
+            $('#hireStudentModal').modal('show')
+        @endif
+    </script>
+@endsection
