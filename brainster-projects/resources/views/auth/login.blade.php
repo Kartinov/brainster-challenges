@@ -4,6 +4,11 @@
 
 @section('content')
     <div class="container h-100">
+
+        @if (session()->has('success'))
+            <div class="alert alert-success mt-3">{{ session()->get('success') }}</div>
+        @endif
+
         <div class="row py-5 h-100 align-items-center">
             <div class="col-md-6 mx-auto card shadow p-3 h-100 text-dark">
                 <form action="{{ route('auth.authenticate') }}" method="POST">

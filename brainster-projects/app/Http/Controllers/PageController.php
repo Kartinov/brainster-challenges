@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::orderBy('updated_at', 'desc')->get();
 
         return view('pages.home', compact('projects'));
     }

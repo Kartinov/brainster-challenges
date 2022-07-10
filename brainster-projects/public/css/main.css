@@ -44,6 +44,11 @@ body {
     text-decoration: none;
 }
 
+.card img {
+    object-fit: cover;
+    height: 60px;
+}
+
 .nav-item button {
     background: none;
     border: none;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CreateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -17,7 +18,7 @@ class ProjectController extends Controller
     {
         if (!Auth::check()) return to_route('auth.login');
 
-        $projects = Project::all();
+        $projects = Project::orderBy('updated_at', 'desc')->get();
 
         return view('projects.index', compact('projects'));
     }
@@ -38,9 +39,11 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProjectRequest $request)
     {
-        //
+        Project::create($request->validated());
+
+        return to_route('projects.create')->withSuccess('Продуктот е успешно додаден!');
     }
 
     /**
@@ -51,7 +54,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        //
     }
 
     /**
@@ -62,7 +65,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -72,9 +75,12 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(CreateProjectRequest $request, Project $project)
     {
-        //
+        $project->update($request->validated());
+
+        return to_route('projects.index')
+            ->withSuccess("Успешно изменет производот: {$project->name}");
     }
 
     /**
@@ -85,6 +91,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return to_route('projects.index')
+            ->withSuccess("Успешно избришан производот: {$project->name}");
     }
 }

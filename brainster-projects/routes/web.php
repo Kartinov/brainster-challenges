@@ -22,4 +22,4 @@ Route::get('/login',         [AuthController::class, 'index'])->name('auth.login
 Route::get('/logout',        [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('auth.authenticate');
 
-Route::resource('projects', ProjectController::class);
+Route::resource('projects', ProjectController::class)->except('show');

@@ -18,6 +18,7 @@ class ProjectFactory extends Factory
     {
         return [
             'image' => "https://picsum.photos/id/4/400/300",
+            'project_url' => "https://parallax-website-dk.netlify.app/",
             'name' => $this->faker->company(),
             'subtitle' => $this->faker->sentence(),
             'description' => $this->faker->paragraph(3),

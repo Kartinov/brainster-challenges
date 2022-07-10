@@ -40,6 +40,6 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
 
-        return to_route('auth.login');
+        return to_route('auth.login')->withSuccess('Успешно се одјавивте');
     }
 }

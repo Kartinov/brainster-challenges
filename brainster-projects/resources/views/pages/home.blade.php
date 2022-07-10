@@ -6,7 +6,7 @@
     <div class="row py-5">
         @foreach ($projects as $project)
             <div class="col-sm-6 col-md-4 mt-4">
-                <a href="{{ route('projects.show', $project) }}"
+                <a href="{{ $project->project_url }}" target="_blank"
                     class="card text-center p-3 h-100 text-dark cursor-pointer">
                     <img src="{{ $project->image }}" class="card-img-top w-25 mx-auto" alt="{{ $project->name }}">
                     <div class="card-body">

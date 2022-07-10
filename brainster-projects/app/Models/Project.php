@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'image',
+        'project_url',
+        'name',
+        'subtitle',
+        'description'
+    ];
 }

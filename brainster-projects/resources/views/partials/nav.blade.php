@@ -12,15 +12,15 @@
                   <ul class="navbar-nav mx-auto align-items-lg-center">
                       <li class="nav-item">
                           <a class="nav-link" href="https://brainster.co/full-stack/" target="_blank">
-                              Академја за<br>Програмирање</a>
+                              Академја за<br> Програмирање</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="https://brainster.co/marketing/" target="_blank">
-                              Академја за<br>Маркетиинг</a>
+                              Академја за<br> Маркетиинг</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="https://brainster.co/graphic-design/" target="_blank">
-                              Академја за<br>Дизајн</a>
+                              Академја за<br> Дизајн</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="https://blog.brainster.co/">
@@ -33,8 +33,12 @@
                           </button>
                       </li>
                       @auth
-                          <li class="nav-item">
-                              <a href="{{ route('auth.logout') }}" class="nav-link btn btn-danger text-white">
+                          <li class="nav-item d-flex align-items-center">
+                              <a href="{{ route('projects.index') }}" class="nav-link btn btn-info text-white mr-3 px-3">
+                                  Панел
+                              </a>
+
+                              <a href="{{ route('auth.logout') }}" class="nav-link btn btn-danger text-white px-3">
                                   Одјави се
                               </a>
                           </li>
