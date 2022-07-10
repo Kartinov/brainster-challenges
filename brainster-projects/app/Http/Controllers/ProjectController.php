@@ -16,8 +16,6 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        if (!Auth::check()) return to_route('auth.login');
-
         $projects = Project::orderBy('updated_at', 'desc')->get();
 
         return view('projects.index', compact('projects'));

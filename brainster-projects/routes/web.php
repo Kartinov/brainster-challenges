@@ -18,8 +18,10 @@ use App\Http\Controllers\ProjectController;
 
 Route::get('/',             [PageController::class, 'index'])->name('home');
 
-Route::get('/login',         [AuthController::class, 'index'])->name('auth.login');
-Route::get('/logout',        [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/login',         [AuthController::class, 'index'])->name('auth.login')->middleware('guest');
+Route::get('/logout',        [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
 Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('auth.authenticate');
 
-Route::resource('projects', ProjectController::class)->except('show');
+Route::resource('projects', ProjectController::class)
+    ->except('show')
+    ->middleware('auth');
