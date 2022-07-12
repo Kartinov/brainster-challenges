@@ -7,6 +7,7 @@ Switch/Checkout between branches to see the challenges.
 
 ## Challenges
 
+- [ ] Challenge 25 - Laravel Forum
 - [x] Challenge 24 - Laravel Brainster Academies
 - [x] Challenge 23 - Laravel Controllers, routes, blade
 - [x] Challenge 22 - Laravel Intro
