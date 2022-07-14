@@ -23,6 +23,7 @@ class Discussion extends Model
         'title',
         'photo',
         'description',
+        'is_approved'
     ];
 
     public function user()

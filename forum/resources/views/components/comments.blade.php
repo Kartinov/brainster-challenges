@@ -4,13 +4,14 @@
 @else
     <div>
         @foreach ($discussion->comments as $comment)
-            <div class="p-10 border flex mb-5 shadow-lg justify-between cursor-pointer">
+            <div class="p-10 border flex mb-5 shadow-lg justify-between">
                 <div class="flex space-x-6">
                     <div>
-                        <p class="font-semibold">{{ $comment->discussion->user->username }} says:</p>
+                        <p class="font-semibold">{{ $comment->user->username }} says:</p>
                         <p>{{ $comment->comment_text }}</p>
                     </div>
 
+                    {{-- comment edit/delete --}}
                     <div class="flex items-center space-x-3">
                         <a href="{{ route('discussions.comments.edit', [$discussion, $comment]) }}"
                             class="hover:text-blue-500">

@@ -17,7 +17,7 @@ class DiscussionController extends Controller
     public function index()
     {
         $discussions = Discussion::where('is_approved', 1)->latest()->get();
-        
+
         return view('dashboard', compact('discussions'));
     }
 
@@ -66,8 +66,6 @@ class DiscussionController extends Controller
      */
     public function show(Discussion $discussion)
     {
-        
-
         return view('discussions.show', compact('discussion'));
     }
 
@@ -79,7 +77,9 @@ class DiscussionController extends Controller
      */
     public function edit(Discussion $discussion)
     {
-        //
+        $categories = Category::all();
+
+        return view('discussions.edit', compact('discussion', 'categories'));
     }
 
     /**
@@ -89,9 +89,21 @@ class DiscussionController extends Controller
      * @param  \App\Models\Discussion  $discussion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Discussion $discussion)
+    public function update(CreateDiscussionRequest $request, Discussion $discussion)
     {
-        //
+        $formFields = $request->validated();
+
+        // upload an image and save the path
+        if ($request->hasFile('photo')) {
+            $formFields['photo'] = $request->file('photo')->store('images', 'public');
+        }
+
+        $discussion->update($formFields);
+
+        return redirect()->back()->with(
+            'message',
+            'Discussion updated successfully!.'
+        );
     }
 
     /**
@@ -102,6 +114,26 @@ class DiscussionController extends Controller
      */
     public function destroy(Discussion $discussion)
     {
-        //
+        $discussion->delete();
+
+        return redirect()->back()->with(
+            'message',
+            'Discussion deleted successfully!.'
+        );
+    }
+
+    public function manage()
+    {
+        $discussions = Discussion::where('is_approved', 0)->latest()->get();
+
+        return view('discussions.manage', compact('discussions'));
+    }
+
+    public function approve(Discussion $discussion)
+    {
+        $discussion->update(['is_approved' => 1]);
+
+        return to_route('discussions.manage')
+            ->with('message', 'Discussion: ' . $discussion->title . ' approved.');
     }
 }

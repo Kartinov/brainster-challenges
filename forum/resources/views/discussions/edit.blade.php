@@ -10,32 +10,36 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('discussions.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('discussions.update', $discussion) }}" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="grid grid-cols-1 gap-6 mt-4">
                 <div>
                     <x-label for='title' :value="__('Title')" />
                     <x-input id="title" name="title" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 border border-gray-200 rounded-md"
-                        value="{{ old('title') }}" />
+                        value="{{ $discussion->title }}" />
                 </div>
 
                 <div>
                     <x-label for='photo' :value="__('Photo')" />
                     <x-input id="photo" name="photo" type="file"
-                        class=" px-4 py-2 mt-2 text-gray-700 border  border-gray-200" />
+                        class=" px-4 py-2 mt-2 mr-5 text-gray-700 border  border-gray-200" />
+                    <img class="h-20 object-fit mr-6 inline-block"
+                        src="{{ $discussion->photo ? asset('storage/' . $discussion->photo) : asset('images/blank-image.jpg') }}"
+                        alt="{{ $discussion->title }}">
                 </div>
 
                 <div>
                     <x-label for='description' :value="__('Description')" />
-                    <x-textarea id="description" name="description">{{ old('description') }}</x-textarea>
+                    <x-textarea id="description" name="description">{{ $discussion->description }}</x-textarea>
                 </div>
 
                 <div>
                     <x-label class="inline-block mr-3" for='category' :value="__('Category')" />
                     <x-select id="category" name="category_id">
                         @foreach ($categories as $category)
-                            <option class="first-letter:capitalize" @selected(old('category_id') == $category->id)
+                            <option class="first-letter:capitalize" @selected($discussion->category_id == $category->id)
                                 value="{{ $category->id }}">
                                 {{ $category->name }}
                             </option>
@@ -45,9 +49,9 @@
 
             </div>
 
-            <div class="flex justify-start mt-6">
+            <div class="flex space-x-3 justify-start mt-6">
                 <button
-                    class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600">Create</button>
+                    class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600">Update</button>
             </div>
         </form>
     </section>

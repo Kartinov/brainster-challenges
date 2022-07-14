@@ -16,12 +16,14 @@ use App\Models\Discussion;
 |
 */
 
-Route::get('/', [DiscussionController::class, 'index'])->name('dashboard');
+Route::controller(DiscussionController::class)->group(function () {
+    Route::get('/', 'index')->name('dashboard');
+    Route::get('/discussions/manage', 'manage')->name('discussions.manage');
+    Route::put('/discussions/{discussion}/approve', 'approve')->name('discussions.approve');
+});
 
 Route::resource('discussions', DiscussionController::class)->except(['index']);
 
-Route::resource('discussions.comments', CommentController::class)->only(
-    ['store', 'create', 'update', 'edit', 'destroy']
-);
+Route::resource('discussions.comments', CommentController::class)->except(['index', 'show']);
 
 require __DIR__ . '/auth.php';
