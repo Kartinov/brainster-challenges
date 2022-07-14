@@ -17,7 +17,7 @@ class DiscussionController extends Controller
     public function index()
     {
         $discussions = Discussion::where('is_approved', 1)->latest()->get();
-
+        
         return view('dashboard', compact('discussions'));
     }
 
@@ -66,6 +66,8 @@ class DiscussionController extends Controller
      */
     public function show(Discussion $discussion)
     {
+        
+
         return view('discussions.show', compact('discussion'));
     }
 

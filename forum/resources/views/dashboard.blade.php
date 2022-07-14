@@ -11,7 +11,6 @@
             {{-- flash message --}}
             <x-flash-message />
 
-
             <x-button-link class="mb-5" href="{{ route('discussions.create') }}">
                 Add new discussion
             </x-button-link>

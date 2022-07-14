@@ -8,7 +8,7 @@
                 <div class="flex">
                     <img class="h-20 object-fit mr-6"
                         src="{{ $item->photo ? asset('storage/' . $item->photo) : asset('images/blank-image.jpg') }}"
-                        alt="{{$discussion->title}}">
+                        alt="{{$item->title}}">
                     <div>
                         <h3 class="text-xl font-semibold text-black mb-3">{{ $item->title }}</h3>
                         <p class="text-gray-600">{{ $item->description }}</p>

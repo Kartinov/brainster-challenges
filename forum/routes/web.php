@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DiscussionController;
+use App\Models\Discussion;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,10 @@ use App\Http\Controllers\DiscussionController;
 
 Route::get('/', [DiscussionController::class, 'index'])->name('dashboard');
 
-Route::resource('discussions', DiscussionController::class)->except('index');
+Route::resource('discussions', DiscussionController::class)->except(['index']);
+
+Route::resource('discussions.comments', CommentController::class)->only(
+    ['store', 'create', 'update', 'edit', 'destroy']
+);
 
 require __DIR__ . '/auth.php';
