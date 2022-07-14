@@ -26,6 +26,7 @@ class CreateDiscussionRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
+            'photo' => 'nullable|file|image',
             'category_id' => 'required|exists:categories,id'
         ];
     }

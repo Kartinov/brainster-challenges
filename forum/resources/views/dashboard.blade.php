@@ -17,7 +17,7 @@
             </x-button-link>
 
             {{-- All discussions --}}
-
+            <x-card :items="$discussions" />
         </div>
     </div>
 </x-app-layout>
