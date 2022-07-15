@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateDiscussionRequest;
 use App\Models\Category;
 use App\Models\Discussion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\CreateDiscussionRequest;
 
 class DiscussionController extends Controller
 {
@@ -17,7 +18,7 @@ class DiscussionController extends Controller
     public function index()
     {
         $discussions = Discussion::where('is_approved', 1)->latest()->get();
-
+        
         return view('dashboard', compact('discussions'));
     }
 
@@ -42,8 +43,8 @@ class DiscussionController extends Controller
     public function store(CreateDiscussionRequest $request)
     {
         $formFields = $request->validated();
-
-        $formFields['user_id'] = auth()->user()->id; // add user_id
+        
+        $formFields['user_id'] = auth()->id(); // add user_id
 
         // upload an image and save the path
         if ($request->hasFile('photo')) {

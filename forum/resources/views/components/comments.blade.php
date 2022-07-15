@@ -12,7 +12,7 @@
                     </div>
 
                     {{-- comment edit/delete --}}
-                    <div class="flex items-center space-x-3">
+                    <div class="flex items-start space-x-3">
                         <a href="{{ route('discussions.comments.edit', [$discussion, $comment]) }}"
                             class="hover:text-blue-500">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
