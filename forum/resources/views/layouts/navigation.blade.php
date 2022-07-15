@@ -67,7 +67,7 @@
                     </button>
                 </div>
             @else
-                <div class="fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="px-6 py-4 sm:block">
 
                     <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 no-underline hover:underline">
                         Login

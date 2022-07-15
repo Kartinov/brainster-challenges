@@ -15,13 +15,17 @@
                 Add new discussion
             </x-button-link>
 
-            <x-button-link class="bg-blue-600 hover:bg-blue-700 focus:bg-blue-900 mb-5"
-                href="{{ route('discussions.manage') }}">
-                Approve discussions
-            </x-button-link>
+            @auth
+                @if (auth()->user()->isAdmin())
+                    <x-button-link class="bg-blue-600 hover:bg-blue-700 focus:bg-blue-900 mb-5"
+                        href="{{ route('discussions.manage') }}">
+                        Approve discussions
+                    </x-button-link>
+                @endauth
+            @endauth
 
             <x-discussion-cards notFoundText="Nothing here yet! Start a topic!" :discussions="$discussions" />
 
-        </div>
     </div>
+</div>
 </x-app-layout>
